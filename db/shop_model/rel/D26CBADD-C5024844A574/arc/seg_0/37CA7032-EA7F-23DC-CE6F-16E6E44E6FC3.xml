@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="37CA7032-EA7F-23DC-CE6F-16E6E44E6FC3" name="one_promotion">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 18:39:48 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<mandatory>false</mandatory>
+<table>F49E0FC1-5708-EF73-66E1-706618938DEF</table>
+<fkeys>
+<fkeyID>6E9DA7A0-73EA-0874-2BBD-5B234AE9F721</fkeyID>
+<fkeyID>724107ED-5612-0DE9-8215-0EBD0E5A1800</fkeyID>
+</fkeys>
+</FKArc>

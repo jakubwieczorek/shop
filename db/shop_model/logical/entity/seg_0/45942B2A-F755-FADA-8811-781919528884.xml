@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="45942B2A-F755-FADA-8811-781919528884" name="Complaints_For_Orders">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-16 18:10:50 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>Complaints_For_Orders</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="order_id" id="35522B63-22E0-1570-B251-5BC23375281D">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 10:28:12 UTC</createdTime>
+<generatorID>7565F030-0B97-4A4F-251E-EDEF35DB93F5</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<referedAttribute>D3F4368B-1230-1400-31EE-D8949C7C9CA5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="complaint_number" id="91C4C0A7-7583-9732-6702-FC8BE17AE270">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:29:19 UTC</createdTime>
+<generatorID>E3BBD5D8-5E95-6C53-B70E-FDEDE5636784</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<referedAttribute>46D0A8D5-C906-F655-D15C-D1F3936E539E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="562AE85F-93D0-C45C-F5D0-5DBEC6DF347B" name="Complaints_For_Orders PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:48:54 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>35522B63-22E0-1570-B251-5BC23375281D</attributeRef>
+<attributeRef>91C4C0A7-7583-9732-6702-FC8BE17AE270</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

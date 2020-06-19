@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2432E3C6-1DE1-DEFD-2443-989AEEC5A6AF" name="Picture">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:23:05 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="picture_id" id="F8D1737B-E495-1DAF-3E86-0CD6CEEE3D09">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:24:52 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="photo" id="6C7CB440-D3AF-E8EA-B0B3-A4828745C334">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:24:52 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="118A126B-7569-AF41-B8E7-4DCE8DD20DE9" name="Picture_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:24:52 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8D1737B-E495-1DAF-3E86-0CD6CEEE3D09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

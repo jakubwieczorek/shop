@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F8645624-2E65-BEF8-E47D-89A471983755" name="Complaint">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>C74EDE3E-D66F-E247-20F3-9AA411B25AD5</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<abbreviation>Complaint</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="complaint_id" id="53156221-8155-9573-9C39-9AA6209CE13F">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>46D0A8D5-C906-F655-D15C-D1F3936E539E</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>complaint_id_sequence</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="complaint_time" id="0D6812F6-D691-70CF-A44D-8CD2A7C0D7A2">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>EF97F27C-4C54-1D9F-4479-7E7FE716A8B2</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="handling_time" id="EC9BD8CF-6F01-A7A5-32FE-C680E7AB71C5">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>0B506B68-159F-8083-C38C-65BC672886E9</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DF1B4158-AE70-CA75-8CE4-BD4E0AEB5D2A" name="Complaint_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>25568E2B-8BAF-E82F-3487-5D6D01092163</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="53156221-8155-9573-9C39-9AA6209CE13F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

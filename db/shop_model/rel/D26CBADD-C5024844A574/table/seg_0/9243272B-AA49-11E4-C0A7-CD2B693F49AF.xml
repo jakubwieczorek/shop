@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9243272B-AA49-11E4-C0A7-CD2B693F49AF" name="Order">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>3B618C95-7E1B-CC8B-5126-2A8DEE0A1E0D</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<abbreviation>Order</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_id" id="383BB7C2-B085-8E99-47D5-116C5067AF1D">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>D3F4368B-1230-1400-31EE-D8949C7C9CA5</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>order_id_sequence</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="customer_email" id="92A454EB-A873-FBEF-38DB-44B96C7969FD">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:48:28 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="066B078F-A356-AF65-11AA-DCBEBCE52619" referredColumn="AF8B39B3-F862-74F0-DBF1-AFE6312CD743"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EA1C8815-73D5-A113-CE05-FA8DED9F82A6" name="Order_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>8D4840B4-F9C5-3FFE-68D8-AA37702BC0B9</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92A454EB-A873-FBEF-38DB-44B96C7969FD"/>
+<colUsage columnID="383BB7C2-B085-8E99-47D5-116C5067AF1D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FFAB323B-46CD-A0FF-8B64-F76B5AA5894C" name="Order_Customer_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:48:28 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92A454EB-A873-FBEF-38DB-44B96C7969FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

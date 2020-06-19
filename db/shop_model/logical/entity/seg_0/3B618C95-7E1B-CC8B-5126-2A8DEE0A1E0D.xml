@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3B618C95-7E1B-CC8B-5126-2A8DEE0A1E0D" name="Order">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-16 18:07:41 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>Order</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="order_id" id="D3F4368B-1230-1400-31EE-D8949C7C9CA5">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:45:49 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="city" id="3D9F4D1C-59CE-4BE7-C4AE-3A858EA140F8">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:48:56 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="postal_code" id="99B96703-7ECD-AD31-1BDD-5B3B49AD5A87">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:33:04 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6 CHAR</dataTypeSize>
+<ownDataTypeParameters>6 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="house_number" id="C20C8E72-D3A3-4A37-940F-E96E0D8305D0">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:50:34 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone_number" id="06725DD6-8A6B-3F21-7B78-18EED1976933">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:35:39 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mail" id="CD164C5B-7E6B-5D07-03BF-C861B5E14DB5">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:37:13 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="street" id="1A15CBD9-8F24-C547-D8A3-3E54CDAA7CAD">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:50:03 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="flat_number" id="2D3CA8A7-276E-0D43-B4CE-A27F82D6C0E7">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:32:06 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="surname" id="AC7A4A08-B0FB-BD14-F47E-48DE4A4EA763">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:54:05 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="first_name" id="B04C9034-1230-E4F2-EF2F-0CFB33A853F1">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:51:36 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8D4840B4-F9C5-3FFE-68D8-AA37702BC0B9" name="Order PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-17 09:48:54 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D3F4368B-1230-1400-31EE-D8949C7C9CA5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Promotion_For_Product_Relation" directorySegmentName="seg_0" id="B9CF110D-8D78-1FAB-AB13-F6482351AD04">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:40:53 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<sourcePk>4C7B5EDB-32C7-1A40-BDE9-09AC213BF904</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>30CEDF22-F14C-A31E-BA4A-6E56E17E69DB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F31BDFC4-3BD1-2D66-5872-E1A864DC36BC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

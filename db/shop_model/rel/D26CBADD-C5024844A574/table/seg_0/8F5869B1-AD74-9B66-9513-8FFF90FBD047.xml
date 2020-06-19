@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8F5869B1-AD74-9B66-9513-8FFF90FBD047" name="Category">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>7EF3855E-01FF-46DF-DF66-135B94447317</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<abbreviation>Category</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="category_id" id="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>85D800CA-12B0-6C67-883A-4FF895A31F67</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>category_id_sequence</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="category_name" id="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>57039614-3D08-54E6-BB35-1F3C4CECCE11</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="subcategory_id" id="F1F3215F-1A82-041B-F383-C2AA939E29DA">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:16:43 UTC</createdTime>
+<generatorID>E85D76CD-08AA-6369-C8DC-0FD52C3529CB</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D867D0B-3102-B078-1744-EF37765F97B0" referredColumn="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6AA64F3E-C5FA-DC2D-1439-946755454A6F" name="Category_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>3D543EDC-9AAA-7216-5A94-061E7E342113</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A527D2E-2770-E170-985F-8E90E574D704" name="category_name_uk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 16:00:24 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75961279-5B3A-A7EB-A8C4-9720F0C562C3" name="subcategory_id_idx">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 15:56:49 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1F3215F-1A82-041B-F383-C2AA939E29DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FAE1D84B-38DA-FA63-1F2D-BE00B27AAD7C" name="Category_Category_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>74B187D5-C4F9-B21B-E0C1-FCBFBD46BA57</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1F3215F-1A82-041B-F383-C2AA939E29DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

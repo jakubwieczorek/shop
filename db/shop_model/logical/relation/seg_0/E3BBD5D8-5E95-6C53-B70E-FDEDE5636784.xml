@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Complaints_Order_Relation" directorySegmentName="seg_0" id="E3BBD5D8-5E95-6C53-B70E-FDEDE5636784">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-16 18:31:58 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="90083F4B-523B-9DBE-4D6B-89172138C7DE" value="true"/>
+</engineerTo>
+<sourcePk>25568E2B-8BAF-E82F-3487-5D6D01092163</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C74EDE3E-D66F-E247-20F3-9AA411B25AD5</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>45942B2A-F755-FADA-8811-781919528884</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

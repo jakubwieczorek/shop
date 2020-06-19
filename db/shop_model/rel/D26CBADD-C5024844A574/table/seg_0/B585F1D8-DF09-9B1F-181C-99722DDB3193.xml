@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B585F1D8-DF09-9B1F-181C-99722DDB3193" name="Complaints_For_Orders">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>45942B2A-F755-FADA-8811-781919528884</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<abbreviation>Complaints_For_Orders</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_id" id="3F9DB705-8C81-DC09-363A-E33755FB0186">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>35522B63-22E0-1570-B251-5BC23375281D</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7598930-07F4-FA66-1A07-AA6A1CAEF65E" referredColumn="383BB7C2-B085-8E99-47D5-116C5067AF1D"/>
+</associations>
+</Column>
+<Column name="complaint_id" id="72770D92-5011-23DB-90CC-6A4F402B0E53">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>91C4C0A7-7583-9732-6702-FC8BE17AE270</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5BDF360C-1148-F7CA-B3CC-1091CCE22D32" referredColumn="53156221-8155-9573-9C39-9AA6209CE13F"/>
+</associations>
+</Column>
+<Column name="Order_customer_email" id="A774F0F8-7EAA-3AE9-18DF-F2F60190751D">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-19 21:48:47 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7598930-07F4-FA66-1A07-AA6A1CAEF65E" referredColumn="92A454EB-A873-FBEF-38DB-44B96C7969FD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E79258F-05C2-406B-1BD3-FF92CAF27F2F" name="Complaints_For_Orders_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>562AE85F-93D0-C45C-F5D0-5DBEC6DF347B</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F9DB705-8C81-DC09-363A-E33755FB0186"/>
+<colUsage columnID="72770D92-5011-23DB-90CC-6A4F402B0E53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52FC059A-3279-9104-A58D-8F226116C9F3" name="complaint_id_idx">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 15:58:51 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72770D92-5011-23DB-90CC-6A4F402B0E53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2852490B-8830-1EBE-8DA8-101E86610738" name="ComplaintsForOrdersComplaintFK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>E3BBD5D8-5E95-6C53-B70E-FDEDE5636784</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72770D92-5011-23DB-90CC-6A4F402B0E53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75BEBEA5-DBEC-1A82-7517-F614A3A4726A" name="Complaints_For_Orders_Order_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>7565F030-0B97-4A4F-251E-EDEF35DB93F5</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A774F0F8-7EAA-3AE9-18DF-F2F60190751D"/>
+<colUsage columnID="3F9DB705-8C81-DC09-363A-E33755FB0186"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

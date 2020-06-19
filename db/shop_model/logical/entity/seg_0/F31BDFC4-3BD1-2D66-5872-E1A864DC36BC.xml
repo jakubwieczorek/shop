@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F31BDFC4-3BD1-2D66-5872-E1A864DC36BC" name="Promotion">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-16 18:09:47 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>Promotion</shortName>
+<foldedAttributesMap>
+<item key="E4A04480-2650-07F4-79A1-162843F5A3C1" value="82F2D20B-5421-B050-94EF-AFAEE20B7695"/>
+</foldedAttributesMap>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="promotion_id" id="8038FDC2-1BD5-B278-AE94-902E63C05952">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:00:13 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="product_id" id="8D1CC9BC-E190-9AFD-759E-999AAA00ED12">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:40:53 UTC</createdTime>
+<generatorID>B9CF110D-8D78-1FAB-AB13-F6482351AD04</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<referedAttribute>DD4AD537-D573-E6A1-0293-01207B8E6F9F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="category_id" id="E4A04480-2650-07F4-79A1-162843F5A3C1">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:48:17 UTC</createdTime>
+<generatorID>B9CF110D-8D78-1FAB-AB13-F6482351AD04</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<referedAttribute>B078FAAC-0D2E-96E4-BB6C-9E23E13BFC91</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="category_id_in_product" id="82F2D20B-5421-B050-94EF-AFAEE20B7695">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:48:22 UTC</createdTime>
+<generatorID>8462D6E6-A979-E595-08ED-C910126D5484</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<referedAttribute>85D800CA-12B0-6C67-883A-4FF895A31F67</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="percentage" id="BC462B3F-2450-2A16-37C3-E0E58584307F">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:00:39 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="DD8BB966-8714-D5F4-939B-10737416BAB4">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:04:16 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150 CHAR</dataTypeSize>
+<ownDataTypeParameters>150 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="deadline" id="235CC612-8876-1676-0C03-036FAA5D3A78">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:05:27 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="delivery_id" id="EFBE97F0-9EC4-A266-D064-C801AF08014E">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 08:12:13 UTC</createdTime>
+<generatorID>DE3CAF53-BC6E-E4C2-D27C-505EA40F24C9</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="true"/>
+</engineerTo>
+<referedAttribute>F8F532DA-BCE3-AC6A-9F88-19815AF548AE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D2B6F010-630E-762E-9CDF-E9D207206C5E" name="Promotion PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 07:40:53 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D26CBADD-BB32-9DD5-32A3-C5024844A574" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8038FDC2-1BD5-B278-AE94-902E63C05952</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

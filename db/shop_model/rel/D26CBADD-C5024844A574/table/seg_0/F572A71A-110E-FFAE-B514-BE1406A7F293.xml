@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F572A71A-110E-FFAE-B514-BE1406A7F293" name="Delivery">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>98DF69E5-C135-9015-C1B7-537DBE8688DD</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<abbreviation>Delivery</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="delivery_id" id="1C2B2093-8D9C-D385-1CFC-150B666626D3">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>F8F532DA-BCE3-AC6A-9F88-19815AF548AE</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>delivery_id_sequence</autoIncrementSequenceName>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="price" id="1290C09B-2485-83B6-302E-BD2E2D9BC67B">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>7E2A8394-7A55-8C6A-DFE5-8A64158EAF7F</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delivery_time" id="E9CCF8D8-C140-C82D-24BC-32A2918F875E">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>53E4CADC-BE61-9AB1-C8AB-3B08C7E15338</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delivery_company_name" id="736EC276-9A24-5C84-C87C-4337B4097AC4">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>858091F3-7891-5FC6-B35C-23DEC8EBDC21</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D80D566E-275E-A9D4-2324-7B8DE5B5F8B3" referredColumn="11F6E9DE-BCBA-845A-3DA9-BD06A8EE321E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D949848D-6A6C-07E0-4E41-C91119CF5DB4" name="Delivery_PK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>230D6F11-7FD8-83A6-4CC6-213FC9C1B80F</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C2B2093-8D9C-D385-1CFC-150B666626D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="98CE0419-2A51-1E08-7A48-6E5AFECBDA95" name="delivery_company_name_idx">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 15:55:47 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="736EC276-9A24-5C84-C87C-4337B4097AC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0EE67A1F-6C87-B30D-598E-D6CD0ECDBDDB" name="Delivery_Delivery_Company_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>3333B1A6-3CBA-684E-E6E2-A3F184AA1258</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="736EC276-9A24-5C84-C87C-4337B4097AC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
