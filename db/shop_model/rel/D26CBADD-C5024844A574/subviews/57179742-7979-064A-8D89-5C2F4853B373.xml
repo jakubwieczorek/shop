@@ -16,7 +16,7 @@
 <objectViews>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="2432E3C6-1DE1-DEFD-2443-989AEEC5A6AF" otype="Table" vid="E135CD19-CA4E-83B1-7014-D02D8994FE27">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="47" y="623" width="253" height="107"/>
+<bounds x="1" y="562" width="299" height="168"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="57F920DF-4E8D-6375-63DD-3277F5162777" otype="Note" vid="0874DD7C-CAC2-7C6A-8500-7A9F6ED46CAC">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -79,15 +79,6 @@ in order to have the promotion either for product or category no both</comment>
 <points>
 <point x="998" y="206"/>
 <point x="998" y="294"/>
-</points>
-</Connector>
-<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="0ED16FCB-B5A8-FF66-C943-45B13FEF1AFB" otype="FKIndexAssociation" vid_source="E135CD19-CA4E-83B1-7014-D02D8994FE27" vid_target="44355331-7A0D-BDCF-7EB1-D159C8CE2DFB">
-<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<backgroundColor>-16777216</backgroundColor>
-<lineWidth>1</lineWidth>
-<points>
-<point x="300" y="676"/>
-<point x="358" y="676"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="2D867D0B-3102-B078-1744-EF37765F97B0" otype="FKIndexAssociation" vid_source="7B31813E-42F0-BC38-69A3-E506685F01FA" vid_target="7B31813E-42F0-BC38-69A3-E506685F01FA">
@@ -183,6 +174,15 @@ in order to have the promotion either for product or category no both</comment>
 <points>
 <point x="1134" y="362"/>
 <point x="1206" y="362"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" otype="FKIndexAssociation" vid_source="44355331-7A0D-BDCF-7EB1-D159C8CE2DFB" vid_target="E135CD19-CA4E-83B1-7014-D02D8994FE27">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="358" y="661"/>
+<point x="300" y="661"/>
 </points>
 </Connector>
 </connectors>

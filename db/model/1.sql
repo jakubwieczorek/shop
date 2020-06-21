@@ -242,7 +242,7 @@ ALTER TABLE promotion
             ON DELETE CASCADE;
 
 CREATE OR REPLACE TRIGGER fkntm_complaints_for_orders BEFORE
-    UPDATE OF complaint_id, order_customer_email, order_id ON complaints_for_orders
+    UPDATE OF complaint_id, order_customer_email, order_id ON complaints_for_orders FOR EACH ROW
     WHEN (new.complaint_id <> old.complaint_id or 
           new.order_customer_email <> old.order_customer_email or 
           new.order_id <> old.order_id)
@@ -252,7 +252,7 @@ END;
 /
 
 CREATE OR REPLACE TRIGGER fkntm_product_order BEFORE
-    UPDATE OF product_category_id, product_id, customer_email, order_id ON product_order
+    UPDATE OF product_category_id, product_id, customer_email, order_id ON product_order FOR EACH ROW
     WHEN (new.product_category_id <> old.product_category_id or
           new.product_id <> old.product_id or
           new.customer_email <> old.customer_email or

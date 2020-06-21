@@ -36,7 +36,7 @@
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="subcategory_id" id="F1F3215F-1A82-041B-F383-C2AA939E29DA">
+<Column name="parent_category_id" id="F1F3215F-1A82-041B-F383-C2AA939E29DA">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 12:16:43 UTC</createdTime>
 <generatorID>E85D76CD-08AA-6369-C8DC-0FD52C3529CB</generatorID>
@@ -77,7 +77,7 @@
 <colUsage columnID="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="75961279-5B3A-A7EB-A8C4-9720F0C562C3" name="subcategory_id_idx">
+<ind_PK_UK id="75961279-5B3A-A7EB-A8C4-9720F0C562C3" name="parent_category_id_idx">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 15:56:49 UTC</createdTime>
 <ownerDesignName>shop_model</ownerDesignName>

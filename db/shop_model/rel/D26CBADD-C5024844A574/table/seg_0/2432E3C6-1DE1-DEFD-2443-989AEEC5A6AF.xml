@@ -8,17 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="picture_id" id="F8D1737B-E495-1DAF-3E86-0CD6CEEE3D09">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-19 21:24:52 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="photo" id="6C7CB440-D3AF-E8EA-B0B3-A4828745C334">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-19 21:24:52 UTC</createdTime>
@@ -27,6 +16,45 @@
 <use>1</use>
 <logicalDatatype>LOGDT029</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="product_id" id="B30BAADB-CC20-8F5E-D359-E29D9B70E7D4">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-21 20:50:18 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" referredColumn="6E05820A-E05C-BC92-7834-EB9129CD7D1F"/>
+</associations>
+</Column>
+<Column name="category_id" id="12EEAD2C-25DC-AF7D-8762-F97217DA5A40">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-21 20:50:18 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" referredColumn="552B7ACF-6018-155C-68A8-623193CE80BE"/>
+</associations>
+</Column>
+<Column name="picture_name" id="D7786754-D69D-BA1A-6434-35CE858EB058">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-21 20:54:50 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -39,7 +67,20 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F8D1737B-E495-1DAF-3E86-0CD6CEEE3D09"/>
+<colUsage columnID="12EEAD2C-25DC-AF7D-8762-F97217DA5A40"/>
+<colUsage columnID="B30BAADB-CC20-8F5E-D359-E29D9B70E7D4"/>
+<colUsage columnID="D7786754-D69D-BA1A-6434-35CE858EB058"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45B4B0C9-79FC-5BF3-F002-9170FF4D7F0C" name="Picture_Product_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-21 20:51:27 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12EEAD2C-25DC-AF7D-8762-F97217DA5A40"/>
+<colUsage columnID="B30BAADB-CC20-8F5E-D359-E29D9B70E7D4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

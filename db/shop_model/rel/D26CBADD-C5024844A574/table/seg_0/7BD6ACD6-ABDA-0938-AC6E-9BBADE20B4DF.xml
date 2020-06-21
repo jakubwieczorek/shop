@@ -32,8 +32,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="product_price" id="B1D55F45-BB7C-AB6A-A9AE-7A90FE870F1C">
@@ -69,8 +69,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>500 CHAR</dataTypeSize>
-<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>1000 CHAR</dataTypeSize>
+<ownDataTypeParameters>1000 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="sold_amount" id="FC396A24-B140-90C7-224D-AD6D619591D1">
@@ -155,20 +155,6 @@
 <colAssociation fkAssociation="A9681079-CE39-7B8E-60A2-EEB07E55250F" referredColumn="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
 </associations>
 </Column>
-<Column name="picture_id" id="7F253E4D-DFFF-F477-C0A7-29F18A3A4730">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-19 21:27:41 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0ED16FCB-B5A8-FF66-C943-45B13FEF1AFB" referredColumn="F8D1737B-E495-1DAF-3E86-0CD6CEEE3D09"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="94AF4805-01D7-421D-B80C-06ECF0BB603D" name="Product_PK">
@@ -184,15 +170,6 @@
 <colUsage columnID="6E05820A-E05C-BC92-7834-EB9129CD7D1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AC57390A-A1BE-63FA-64BC-A66715BF03DD" name="picture_id_idx">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-19 21:28:35 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="7F253E4D-DFFF-F477-C0A7-29F18A3A4730"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="E9F1D835-E58C-3D43-9B55-41F1F5703C77" name="Product_Category_FK">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 12:04:13 UTC</createdTime>
@@ -202,16 +179,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="552B7ACF-6018-155C-68A8-623193CE80BE"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="E7F5F876-1833-9CA3-5E7E-5519D325041C" name="Product_Picture_FK">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-19 21:27:41 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="7F253E4D-DFFF-F477-C0A7-29F18A3A4730"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

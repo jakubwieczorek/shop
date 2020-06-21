@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db_18.4.xe:
+    build: ./db
+    restart: always
+    ports:
+     - "51521:1521"
+     - "55500:5500"
+    volumes:
+     - ./db/fileswap:/fileswap
+       #- ./db/oradata:/opt/oracle/oradata
+       #- ./db/scripts/setup:/opt/oracle/scripts/setup
+       #- ./db/scripts/startup:/opt/oracle/scripts/startup
+    tty: true
