@@ -32,20 +32,6 @@
 <colAssociation fkAssociation="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" referredColumn="6E05820A-E05C-BC92-7834-EB9129CD7D1F"/>
 </associations>
 </Column>
-<Column name="category_id" id="12EEAD2C-25DC-AF7D-8762-F97217DA5A40">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-21 20:50:18 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" referredColumn="552B7ACF-6018-155C-68A8-623193CE80BE"/>
-</associations>
-</Column>
 <Column name="picture_name" id="D7786754-D69D-BA1A-6434-35CE858EB058">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-21 20:54:50 UTC</createdTime>
@@ -57,6 +43,21 @@
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="category_name" id="6DCCD558-F602-8FD0-E41C-2DC4C3FD9EEA">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 21:51:02 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F332E1DF-951A-F8C1-4221-50FD9F7B8AF3" referredColumn="C261762B-60BA-49A2-DD52-07DED69666FB"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="118A126B-7569-AF41-B8E7-4DCE8DD20DE9" name="Picture_PK">
@@ -67,7 +68,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="12EEAD2C-25DC-AF7D-8762-F97217DA5A40"/>
+<colUsage columnID="6DCCD558-F602-8FD0-E41C-2DC4C3FD9EEA"/>
 <colUsage columnID="B30BAADB-CC20-8F5E-D359-E29D9B70E7D4"/>
 <colUsage columnID="D7786754-D69D-BA1A-6434-35CE858EB058"/>
 </indexColumnUsage>
@@ -79,7 +80,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="12EEAD2C-25DC-AF7D-8762-F97217DA5A40"/>
+<colUsage columnID="6DCCD558-F602-8FD0-E41C-2DC4C3FD9EEA"/>
 <colUsage columnID="B30BAADB-CC20-8F5E-D359-E29D9B70E7D4"/>
 </indexColumnUsage>
 </ind_PK_UK>

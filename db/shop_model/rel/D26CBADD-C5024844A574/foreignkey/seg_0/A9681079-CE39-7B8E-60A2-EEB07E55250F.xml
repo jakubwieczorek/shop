@@ -10,7 +10,7 @@
 <keyObject>6AA64F3E-C5FA-DC2D-1439-946755454A6F</keyObject>
 <referredKeyID>6AA64F3E-C5FA-DC2D-1439-946755454A6F</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>category_id</refColNames>
+<refColNames>category_name</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

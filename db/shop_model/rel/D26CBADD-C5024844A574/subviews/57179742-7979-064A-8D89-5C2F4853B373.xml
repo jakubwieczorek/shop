@@ -38,7 +38,7 @@ an account</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="8F5869B1-AD74-9B66-9513-8FFF90FBD047" otype="Table" vid="7B31813E-42F0-BC38-69A3-E506685F01FA">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="957" y="524" width="244" height="152"/>
+<bounds x="826" y="509" width="332" height="113"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="9243272B-AA49-11E4-C0A7-CD2B693F49AF" otype="Table" vid="335A4F44-80B9-8F2F-BD8F-A5B47BECC1BD">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -54,13 +54,13 @@ an account</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="E04EB11C-B219-7000-694C-860628DFFDBE" otype="Note" vid="9CF956E3-20D6-BA32-5917-C1D4508CF552">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="285" y="787" width="210" height="88"/>
+<bounds x="161" y="848" width="210" height="88"/>
 <comment>Exclusive relation between promotion and product, category assured by check
 in order to have the promotion either for product or category no both</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F49E0FC1-5708-EF73-66E1-706618938DEF" otype="Table" vid="B5E35ADB-91E6-A2EA-6601-A5D70D9A7CB0">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="399" y="889" width="356" height="242"/>
+<bounds x="379" y="848" width="376" height="295"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F572A71A-110E-FFAE-B514-BE1406A7F293" otype="Table" vid="20E5A75F-0DEC-5875-8249-F01DC827D93E">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -86,11 +86,11 @@ in order to have the promotion either for product or category no both</comment>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1152" y="579"/>
-<point x="1152" y="588"/>
-<point x="1152" y="659"/>
-<point x="1057" y="659"/>
-<point x="1057" y="676"/>
+<point x="1158" y="598"/>
+<point x="1194" y="598"/>
+<point x="1194" y="735"/>
+<point x="1015" y="734"/>
+<point x="1015" y="622"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="4234B320-A70E-81C8-3017-95ADB16F386D" otype="FKIndexAssociation" vid_source="335A4F44-80B9-8F2F-BD8F-A5B47BECC1BD" vid_target="147F8CBF-B0AF-CF3F-0FE5-48EF82AC2240">
@@ -116,10 +116,10 @@ in order to have the promotion either for product or category no both</comment>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="957" y="638"/>
-<point x="731" y="638"/>
-<point x="731" y="866"/>
-<point x="731" y="889"/>
+<point x="826" y="600"/>
+<point x="730" y="600"/>
+<point x="729" y="845"/>
+<point x="729" y="848"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="724107ED-5612-0DE9-8215-0EBD0E5A1800" otype="FKIndexAssociation" vid_source="44355331-7A0D-BDCF-7EB1-D159C8CE2DFB" vid_target="B5E35ADB-91E6-A2EA-6601-A5D70D9A7CB0">
@@ -127,8 +127,8 @@ in order to have the promotion either for product or category no both</comment>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="538" y="778"/>
-<point x="538" y="889"/>
+<point x="528" y="778"/>
+<point x="528" y="848"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="95659089-1B1D-503A-287E-F6FE3F36003F" otype="FKIndexAssociation" vid_source="44355331-7A0D-BDCF-7EB1-D159C8CE2DFB" vid_target="147F8CBF-B0AF-CF3F-0FE5-48EF82AC2240">
@@ -145,8 +145,8 @@ in order to have the promotion either for product or category no both</comment>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="957" y="600"/>
-<point x="678" y="600"/>
+<point x="826" y="570"/>
+<point x="678" y="570"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="D00AF13A-1536-4F7C-C31E-52DE1F8BAC5B" otype="FKIndexAssociation" vid_source="20E5A75F-0DEC-5875-8249-F01DC827D93E" vid_target="B5E35ADB-91E6-A2EA-6601-A5D70D9A7CB0">
@@ -154,8 +154,8 @@ in order to have the promotion either for product or category no both</comment>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="846" y="947"/>
-<point x="755" y="947"/>
+<point x="846" y="933"/>
+<point x="755" y="933"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="D80D566E-275E-A9D4-2324-7B8DE5B5F8B3" otype="FKIndexAssociation" vid_source="56BFB7E7-B26D-2275-D3E3-A8E1BBB2A1A1" vid_target="20E5A75F-0DEC-5875-8249-F01DC827D93E">
@@ -165,6 +165,16 @@ in order to have the promotion either for product or category no both</comment>
 <points>
 <point x="1318" y="933"/>
 <point x="1258" y="933"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="DDCEDAFD-4CD8-EC4F-0A42-4D47F59972F0" otype="FKIndexAssociation" vid_source="20E5A75F-0DEC-5875-8249-F01DC827D93E" vid_target="335A4F44-80B9-8F2F-BD8F-A5B47BECC1BD">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="1250" y="862"/>
+<point x="1250" y="458"/>
+<point x="1134" y="458"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="E7598930-07F4-FA66-1A07-AA6A1CAEF65E" otype="FKIndexAssociation" vid_source="335A4F44-80B9-8F2F-BD8F-A5B47BECC1BD" vid_target="726E257C-25C4-919E-E1A6-BFC7456339CA">
@@ -189,7 +199,7 @@ in order to have the promotion either for product or category no both</comment>
 <arcs>
 <Arc class="oracle.dbtools.crest.swingui.relational.TVFKArc" oid="37CA7032-EA7F-23DC-CE6F-16E6E44E6FC3" otype="FKArc" vid="D3C16823-AA11-84B9-B1C2-50846380AA2D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="379" y="869" width="396" height="282"/>
+<bounds x="359" y="828" width="416" height="335"/>
 </Arc>
 </arcs>
 </Diagram>

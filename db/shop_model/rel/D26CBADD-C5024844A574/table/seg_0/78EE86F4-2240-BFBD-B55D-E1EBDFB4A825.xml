@@ -53,22 +53,6 @@
 <colAssociation fkAssociation="4234B320-A70E-81C8-3017-95ADB16F386D" referredColumn="383BB7C2-B085-8E99-47D5-116C5067AF1D"/>
 </associations>
 </Column>
-<Column name="product_category_id" id="17FE065B-9FF0-C924-442E-19DE52106854">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>1D6F88A1-9E17-869A-8F55-6DD7FA56F7CE</generatorID>
-<ownerDesignName>shop_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="95659089-1B1D-503A-287E-F6FE3F36003F" referredColumn="552B7ACF-6018-155C-68A8-623193CE80BE"/>
-</associations>
-</Column>
 <Column name="customer_email" id="78BA32F4-5304-EB6F-0F46-352AEC4A9113">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-19 21:48:47 UTC</createdTime>
@@ -84,6 +68,21 @@
 <colAssociation fkAssociation="4234B320-A70E-81C8-3017-95ADB16F386D" referredColumn="92A454EB-A873-FBEF-38DB-44B96C7969FD"/>
 </associations>
 </Column>
+<Column name="category_name" id="830710A4-ABA5-5146-9E05-77F2E7D5DF4C">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 21:51:02 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95659089-1B1D-503A-287E-F6FE3F36003F" referredColumn="C261762B-60BA-49A2-DD52-07DED69666FB"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="CB6910EE-2714-4820-1B2C-2B4AEEEF2902" name="Product_Order_PK">
@@ -95,14 +94,15 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="17FE065B-9FF0-C924-442E-19DE52106854"/>
+<colUsage columnID="830710A4-ABA5-5146-9E05-77F2E7D5DF4C"/>
 <colUsage columnID="D77E6D01-EDA8-CB21-2664-EBC5A2F32892"/>
+<colUsage columnID="78BA32F4-5304-EB6F-0F46-352AEC4A9113"/>
 <colUsage columnID="D0E32F7F-9788-8939-082E-50BEE82CB280"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="510C5D65-2A2E-EF53-7255-12BAD6D9D40F" name="order_fk_idx">
+<ind_PK_UK id="45AD8FB3-A3C6-FEB3-E487-AB4EE4C2E3D8" name="order_customer_idx">
 <createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:27:04 UTC</createdTime>
+<createdTime>2020-06-23 11:49:26 UTC</createdTime>
 <ownerDesignName>shop_model</ownerDesignName>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
@@ -130,7 +130,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="17FE065B-9FF0-C924-442E-19DE52106854"/>
+<colUsage columnID="830710A4-ABA5-5146-9E05-77F2E7D5DF4C"/>
 <colUsage columnID="D77E6D01-EDA8-CB21-2664-EBC5A2F32892"/>
 </indexColumnUsage>
 </ind_PK_UK>

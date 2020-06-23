@@ -9,21 +9,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="category_id" id="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>85D800CA-12B0-6C67-883A-4FF895A31F67</generatorID>
-<ownerDesignName>shop_model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
-<autoIncrementColumn>true</autoIncrementColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<autoIncrementSequenceName>category_id_sequence</autoIncrementSequenceName>
-<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
-</Column>
 <Column name="category_name" id="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 12:04:13 UTC</createdTime>
@@ -36,7 +21,7 @@
 <ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="parent_category_id" id="F1F3215F-1A82-041B-F383-C2AA939E29DA">
+<Column name="parent_category_name" id="F1F3215F-1A82-041B-F383-C2AA939E29DA">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 12:16:43 UTC</createdTime>
 <generatorID>E85D76CD-08AA-6369-C8DC-0FD52C3529CB</generatorID>
@@ -44,13 +29,13 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="2D867D0B-3102-B078-1744-EF37765F97B0" referredColumn="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
+<colAssociation fkAssociation="2D867D0B-3102-B078-1744-EF37765F97B0" referredColumn="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
 </associations>
 </Column>
 </columns>
@@ -64,20 +49,10 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="2A527D2E-2770-E170-985F-8E90E574D704" name="category_name_uk">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 16:00:24 UTC</createdTime>
-<ownerDesignName>shop_model</ownerDesignName>
-<indexState>Unique Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
 <colUsage columnID="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="75961279-5B3A-A7EB-A8C4-9720F0C562C3" name="parent_category_id_idx">
+<ind_PK_UK id="75961279-5B3A-A7EB-A8C4-9720F0C562C3" name="parent_category_name_idx">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 15:56:49 UTC</createdTime>
 <ownerDesignName>shop_model</ownerDesignName>

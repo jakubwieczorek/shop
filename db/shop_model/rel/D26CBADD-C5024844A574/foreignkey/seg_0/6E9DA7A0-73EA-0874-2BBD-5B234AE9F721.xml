@@ -5,12 +5,13 @@
 <generatorID>8462D6E6-A979-E595-08ED-C910126D5484</generatorID>
 <ownerDesignName>shop_model</ownerDesignName>
 <referredTableLongName>Category</referredTableLongName>
+<arc>37CA7032-EA7F-23DC-CE6F-16E6E44E6FC3</arc>
 <deleteRule>CASCADE</deleteRule>
 <referredTableID>8F5869B1-AD74-9B66-9513-8FFF90FBD047</referredTableID>
 <keyObject>6AA64F3E-C5FA-DC2D-1439-946755454A6F</keyObject>
 <referredKeyID>6AA64F3E-C5FA-DC2D-1439-946755454A6F</referredKeyID>
 <mandatory>false</mandatory>
-<refColNames>category_id</refColNames>
+<refColNames>category_name</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

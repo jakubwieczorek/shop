@@ -139,20 +139,19 @@
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="category_id" id="552B7ACF-6018-155C-68A8-623193CE80BE">
+<Column name="category_name" id="C261762B-60BA-49A2-DD52-07DED69666FB">
 <createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>B078FAAC-0D2E-96E4-BB6C-9E23E13BFC91</generatorID>
+<createdTime>2020-06-22 21:46:45 UTC</createdTime>
 <ownerDesignName>shop_model</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A9681079-CE39-7B8E-60A2-EEB07E55250F" referredColumn="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
+<colAssociation fkAssociation="A9681079-CE39-7B8E-60A2-EEB07E55250F" referredColumn="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
 </associations>
 </Column>
 </columns>
@@ -166,7 +165,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="552B7ACF-6018-155C-68A8-623193CE80BE"/>
+<colUsage columnID="C261762B-60BA-49A2-DD52-07DED69666FB"/>
 <colUsage columnID="6E05820A-E05C-BC92-7834-EB9129CD7D1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
@@ -178,7 +177,7 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="552B7ACF-6018-155C-68A8-623193CE80BE"/>
+<colUsage columnID="C261762B-60BA-49A2-DD52-07DED69666FB"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

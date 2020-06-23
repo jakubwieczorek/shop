@@ -38,6 +38,56 @@
 <colAssociation fkAssociation="066B078F-A356-AF65-11AA-DCBEBCE52619" referredColumn="AF8B39B3-F862-74F0-DBF1-AFE6312CD743"/>
 </associations>
 </Column>
+<Column name="delivery_id" id="2BF6818E-B8AF-6C76-0885-E50BC2EF2EB3">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 20:53:12 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDCEDAFD-4CD8-EC4F-0A42-4D47F59972F0" referredColumn="1C2B2093-8D9C-D385-1CFC-150B666626D3"/>
+</associations>
+</Column>
+<Column name="cost_of_products" id="614943AE-E79D-054F-8936-08B782A643C3">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-23 12:13:41 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cost_of_delivery" id="57EA2603-B2BF-7E15-71E8-F1972C14B506">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-23 12:13:53 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="final_cost" id="78FB794F-91AB-3C56-3BC9-12EA55D40173">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-23 12:13:53 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="EA1C8815-73D5-A113-CE05-FA8DED9F82A6" name="Order_PK">
@@ -53,6 +103,15 @@
 <colUsage columnID="383BB7C2-B085-8E99-47D5-116C5067AF1D"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="A9C20CDA-0F2C-B72D-1D0A-2C55EB9CC979" name="order_delivery_id_idx">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 20:55:02 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BF6818E-B8AF-6C76-0885-E50BC2EF2EB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="FFAB323B-46CD-A0FF-8B64-F76B5AA5894C" name="Order_Customer_FK">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-19 21:48:28 UTC</createdTime>
@@ -61,6 +120,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="92A454EB-A873-FBEF-38DB-44B96C7969FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A4F6CEA-D63D-1CC9-D7EC-E66755AE1091" name="Order_Delivery_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 20:54:25 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BF6818E-B8AF-6C76-0885-E50BC2EF2EB3"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

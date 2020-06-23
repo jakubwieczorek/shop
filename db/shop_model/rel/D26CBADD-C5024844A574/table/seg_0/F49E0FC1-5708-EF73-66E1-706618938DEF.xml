@@ -41,40 +41,6 @@
 <colAssociation fkAssociation="724107ED-5612-0DE9-8215-0EBD0E5A1800" referredColumn="6E05820A-E05C-BC92-7834-EB9129CD7D1F"/>
 </associations>
 </Column>
-<Column name="product_category_id" id="9BBA5609-D0FF-3E5A-0902-D9F3ECE4301E">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>E4A04480-2650-07F4-79A1-162843F5A3C1</generatorID>
-<ownerDesignName>shop_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="724107ED-5612-0DE9-8215-0EBD0E5A1800" referredColumn="552B7ACF-6018-155C-68A8-623193CE80BE"/>
-</associations>
-</Column>
-<Column name="category_id" id="3F197733-5BB7-AC20-A64C-C0042D5DEC36">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>82F2D20B-5421-B050-94EF-AFAEE20B7695</generatorID>
-<ownerDesignName>shop_model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="6E9DA7A0-73EA-0874-2BBD-5B234AE9F721" referredColumn="10CEBFFE-1441-B40D-6E1C-1CC4D4A71E73"/>
-</associations>
-</Column>
 <Column name="percentage" id="F1FD2876-AD35-6C9A-3421-B273FA27A64F">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 12:04:13 UTC</createdTime>
@@ -130,6 +96,38 @@
 <colAssociation fkAssociation="D00AF13A-1536-4F7C-C31E-52DE1F8BAC5B" referredColumn="1C2B2093-8D9C-D385-1CFC-150B666626D3"/>
 </associations>
 </Column>
+<Column name="category_name" id="FD8E7806-6899-26EE-312C-5BF54B45BA54">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 21:46:45 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E9DA7A0-73EA-0874-2BBD-5B234AE9F721" referredColumn="1EBBBB82-E8EE-563A-7CC3-0CD1E1A1DF74"/>
+</associations>
+</Column>
+<Column name="product_category_name" id="02280919-236C-673C-2259-3FB8772D9879">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-22 21:51:02 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="724107ED-5612-0DE9-8215-0EBD0E5A1800" referredColumn="C261762B-60BA-49A2-DD52-07DED69666FB"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="FC1A4C4E-3C61-1DEF-9C36-2F9C28BB21BB" name="Promotion_PK">
@@ -150,8 +148,8 @@
 <ownerDesignName>shop_model</ownerDesignName>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9BBA5609-D0FF-3E5A-0902-D9F3ECE4301E"/>
 <colUsage columnID="311DCB6E-1E1B-8C07-43FA-6D37D46DC1FE"/>
+<colUsage columnID="02280919-236C-673C-2259-3FB8772D9879"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="F3A25884-9B7A-1B0A-23A8-38A29E6ABE9A" name="delivery_id_idx">
@@ -163,24 +161,13 @@
 <colUsage columnID="56233B30-F15B-29B3-300E-F881F67D625F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="8761FE4D-C273-BA21-F69F-BE83E8A92C69" name="category_id_idx">
+<ind_PK_UK id="8761FE4D-C273-BA21-F69F-BE83E8A92C69" name="promotion_category_name_idx">
 <createdBy>jakub</createdBy>
 <createdTime>2020-06-18 14:17:37 UTC</createdTime>
 <ownerDesignName>shop_model</ownerDesignName>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="3F197733-5BB7-AC20-A64C-C0042D5DEC36"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="E3FF8C3A-2C51-FF2D-83E2-E7206F833EB5" name="Promotion_Category_FK">
-<createdBy>jakub</createdBy>
-<createdTime>2020-06-18 12:04:13 UTC</createdTime>
-<generatorID>8462D6E6-A979-E595-08ED-C910126D5484</generatorID>
-<ownerDesignName>shop_model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="3F197733-5BB7-AC20-A64C-C0042D5DEC36"/>
+<colUsage columnID="FD8E7806-6899-26EE-312C-5BF54B45BA54"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="7FC76CC4-8FDC-7E29-4B73-E9460515273B" name="Promotion_Delivery_FK">
@@ -202,8 +189,19 @@
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9BBA5609-D0FF-3E5A-0902-D9F3ECE4301E"/>
+<colUsage columnID="02280919-236C-673C-2259-3FB8772D9879"/>
 <colUsage columnID="311DCB6E-1E1B-8C07-43FA-6D37D46DC1FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3FF8C3A-2C51-FF2D-83E2-E7206F833EB5" name="Promotion_Category_FK">
+<createdBy>jakub</createdBy>
+<createdTime>2020-06-18 12:04:13 UTC</createdTime>
+<generatorID>8462D6E6-A979-E595-08ED-C910126D5484</generatorID>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD8E7806-6899-26EE-312C-5BF54B45BA54"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
