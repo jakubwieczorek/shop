@@ -13,13 +13,50 @@
 
 	<description>shop application spring boot</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-
 	<modules>
 		<module>shop-war</module>
 		<module>shop-business-spring</module>
 	</modules>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven-dependency-plugin.version>3.1</maven-dependency-plugin.version>
+		<spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+		<maven-war-plugin.version>3.2.3</maven-war-plugin.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-dependency-plugin.version}</version>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>wieczorek.jakub</groupId>
+				<artifactId>shop-business-spring-model</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>wieczorek.jakub</groupId>
+				<artifactId>shop-business-spring-client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>wieczorek.jakub</groupId>
+				<artifactId>shop-business-spring-beans</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
