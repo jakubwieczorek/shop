@@ -1,13 +1,11 @@
-package wieczorek.jakub.shop.business.spring.model.entities;
+package wieczorek.jakub.shop.business.spring.model.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Customer")
@@ -41,6 +39,10 @@ public class Customer
 
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "order_id")
+    private List<Order>orders;
+
     public CustomerDTO toDTO()
     {
         CustomerDTO customerDTO = new CustomerDTO();
@@ -53,6 +55,7 @@ public class Customer
         customerDTO.setPostalCode(this.getPostalCode());
         customerDTO.setPhoneNumber(this.getPhoneNumber());
         customerDTO.setSurname(this.getSurname());
+        customerDTO.setStreet(this.getStreet());
         return customerDTO;
     }
 }
