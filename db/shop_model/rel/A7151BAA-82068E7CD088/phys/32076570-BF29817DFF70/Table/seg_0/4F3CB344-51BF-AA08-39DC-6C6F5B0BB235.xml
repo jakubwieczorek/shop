@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="delivery_company" directorySegmentName="seg_0" id="4F3CB344-51BF-AA08-39DC-6C6F5B0BB235">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="delivery_company_id" id="023BD79A-54D5-5053-50AE-D96DBA03E605">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 19:06:58 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="delivery_company_name" id="F3B91CDF-DAA5-E1DE-6C56-8E79E6D00402">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="delivery_company_pk" id="B29186F9-6B9E-DC09-F785-36361AD0EC6F">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="delivery_company_name_uk" id="7F0F0C0A-E9C9-8D26-3FBF-9DF99CB20C40">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 19:07:19 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

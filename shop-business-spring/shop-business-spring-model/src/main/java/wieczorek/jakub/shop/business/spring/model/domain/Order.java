@@ -1,9 +1,9 @@
 package wieczorek.jakub.shop.business.spring.model.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
+import wieczorek.jakub.shop.business.spring.client.dto.OrderDTO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,25 +16,41 @@ public class Order
 {
     @Id
     @Column(name = "order_id")
-    @GeneratedValue(generator = "order_id_sequence", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "order_id_sequence", sequenceName = "order_id_sequence", allocationSize = 1)
-//    @GenericGenerator(name = "order_id_sequence", strategy = "sequence", parameters = {
-//            @Parameter(name="sequence", value="order_id_sequence")
-//    })
+    @GeneratedValue(generator = "order_id_sequence", strategy = GenerationType.SEQUENCE)
+    @Setter(AccessLevel.NONE)
     private Long orderId;
 
-    @Column(name = "customer_email")
-    private String customerEmail;
-
-    @Column(name = "delivery_id")
     private Long deliveryId;
 
-    @Column(name = "cost_of_products")
     private BigDecimal costOfProducts;
 
-    @Column(name = "cost_of_delivery")
     private BigDecimal costOfDelivery;
 
-    @Column(name = "final_cost")
     private BigDecimal finalCost;
+
+    public OrderDTO toDTO()
+    {
+        OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setOrderId(orderId);
+        orderDTO.setCostOfDelivery(costOfDelivery);
+        orderDTO.setCostOfProducts(costOfProducts);
+        orderDTO.setDeliveryId(deliveryId);
+        orderDTO.setFinalCost(finalCost);
+
+        return orderDTO;
+    }
+
+    public Order()
+    {
+
+    }
+
+    public Order(OrderDTO orderDTO)
+    {
+        setCostOfDelivery(orderDTO.getCostOfDelivery());
+        setCostOfProducts(orderDTO.getCostOfProducts());
+        setDeliveryId(orderDTO.getDeliveryId());
+        setFinalCost(orderDTO.getFinalCost());
+    }
 }

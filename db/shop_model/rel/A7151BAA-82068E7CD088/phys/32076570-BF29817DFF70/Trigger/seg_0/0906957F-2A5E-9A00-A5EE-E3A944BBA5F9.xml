@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="fkntm_product_order" directorySegmentName="seg_0" id="0906957F-2A5E-9A00-A5EE-E3A944BBA5F9">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:24 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<actions>UPDATE</actions>
+<body><![CDATA[BEGIN
+    raise_application_error(-20225, 'Non Transferable FK constraint  on table Product_Order is violated');
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<columns>47AB2F4E-E2D7-743B-68F9-10C4E69CFDAB, 62A2B6DD-F5E1-6036-D63D-C08848413160, DC68D0F0-FEC5-C937-5111-5B7E8ED0398B, 5D8EE47E-05AB-5666-FC54-5DF5FDBA61D7</columns>
+<condition><![CDATA[new.product_category_id <> old.product_category_id or new.product_id <> old.product_id or new.customer_email <> old.customer_email or new.order_id <> old.order_id]]></condition>
+<table>1F42642C-CFF0-07C8-1278-4C56B0033067</table>
+</TriggerOraclev10g>

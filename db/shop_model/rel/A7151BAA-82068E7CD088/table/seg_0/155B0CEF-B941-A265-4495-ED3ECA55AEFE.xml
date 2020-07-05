@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="155B0CEF-B941-A265-4495-ED3ECA55AEFE" name="complaints_for_orders">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>1D29E5F2-A123-9FAB-C86B-BA23F93B407D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="order_id" id="5937A5C7-B633-74DA-6934-84CC06EF79EC">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>7345990A-3BAF-183A-878A-7A5095A10236</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C01BE2A5-28E0-C09E-C44F-F4E511E651B1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="895BF481-9F83-0413-FC36-81040FF7E3FE" referredColumn="70453949-9D31-B394-F4C7-5A29D3BC3484"/>
+</associations>
+</Column>
+<Column name="complaint_id" id="A658BD87-F060-C1A4-0AE9-77334855F842">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>85E21331-E8BE-E785-4AAF-2E238810338A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>3D840EB6-E5D0-83D1-4F18-806235731E2B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3D827F6-862B-74D4-7519-FA7B76E8B6D1" referredColumn="C7B27831-728F-4095-25F3-02176458E418"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E12FCFE8-2714-D349-927B-B41CF39A37E7" name="complaints_for_orders_pk">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>160B7200-B09C-2E07-D38E-5606E3ABF37D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5937A5C7-B633-74DA-6934-84CC06EF79EC"/>
+<colUsage columnID="A658BD87-F060-C1A4-0AE9-77334855F842"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A0E2FAFB-2895-646E-6996-5C84CEC877E2" name="complaint_id_idx">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>CF0C372D-40DF-894D-C000-47C99C8D6807</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A658BD87-F060-C1A4-0AE9-77334855F842"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="51DB62FF-90AD-775D-1639-DE62B3E2A898" name="complaints_for_orders_order_fk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5937A5C7-B633-74DA-6934-84CC06EF79EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF4DEFAB-5FBC-C28F-446B-BEC5839F7B07" name="complaintsfororderscomplaintfk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A658BD87-F060-C1A4-0AE9-77334855F842"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

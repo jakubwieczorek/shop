@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1F42642C-CFF0-07C8-1278-4C56B0033067" name="product_order">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>323B9955-6D92-9968-D8DD-F284BD19F850</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="amount_of_ordered_products" id="3B1F2885-16FB-443D-1B72-553EFF645FD7">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>2DAD397C-B0F1-6622-0665-56ACAB2AF225</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0467F12D-1F75-D502-B582-B931ACE8E768</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="product_id" id="62A2B6DD-F5E1-6036-D63D-C08848413160">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>E2577A2A-FA8C-BE3C-DF4D-253A3379749B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C01BE2A5-28E0-C09E-C44F-F4E511E651B1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64EA61FB-243A-5F0B-B8A2-72F205F6D318" referredColumn="B2379511-D3C1-9244-8E86-E39EEC6E523E"/>
+</associations>
+</Column>
+<Column name="order_id" id="5D8EE47E-05AB-5666-FC54-5DF5FDBA61D7">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>C7EA515F-A87B-4FD4-A841-466CB2294548</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>C01BE2A5-28E0-C09E-C44F-F4E511E651B1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F320C7A-FC98-AF4C-22A3-D7B86DACCB84" referredColumn="70453949-9D31-B394-F4C7-5A29D3BC3484"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9063E0F2-F945-AF81-18C0-C74F6093BC64" name="product_order_pk">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>31346D5C-380F-F785-2D3A-D6BCFBB39479</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62A2B6DD-F5E1-6036-D63D-C08848413160"/>
+<colUsage columnID="5D8EE47E-05AB-5666-FC54-5DF5FDBA61D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A8A62EB-BD1F-4358-4164-E9672F2EC920" name="product_order_order_id_idx">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>AFC8A4F3-FD40-4C2C-0CB7-CF7E9EE333D1</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D8EE47E-05AB-5666-FC54-5DF5FDBA61D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1A795B8-DD2F-776C-8609-874BFD469EAB" name="product_order_order_fk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D8EE47E-05AB-5666-FC54-5DF5FDBA61D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1347215-BE71-510F-F1BB-3BE2659B3713" name="product_order_product_fk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62A2B6DD-F5E1-6036-D63D-C08848413160"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

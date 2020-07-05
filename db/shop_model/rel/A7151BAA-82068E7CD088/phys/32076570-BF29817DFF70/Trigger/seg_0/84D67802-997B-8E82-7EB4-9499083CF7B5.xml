@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="fkntm_complaints_for_orders" directorySegmentName="seg_0" id="84D67802-997B-8E82-7EB4-9499083CF7B5">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:24 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<actions>UPDATE</actions>
+<body><![CDATA[BEGIN
+    raise_application_error(-20225, 'Non Transferable FK constraint  on table Complaints_For_Orders is violated');
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<columns>A658BD87-F060-C1A4-0AE9-77334855F842, 78B20F73-D06E-EDB7-68DF-28A5CC01876D, 5937A5C7-B633-74DA-6934-84CC06EF79EC</columns>
+<condition><![CDATA[new.complaint_id <> old.complaint_id or new.order_customer_email <> old.order_customer_email or new.order_id <> old.order_id]]></condition>
+<table>155B0CEF-B941-A265-4495-ED3ECA55AEFE</table>
+</TriggerOraclev10g>

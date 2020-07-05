@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F3CB344-51BF-AA08-39DC-6C6F5B0BB235" name="delivery_company">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>18D14089-F9CE-8ED3-2C13-4AE0B2200C7F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="delivery_company_id" id="023BD79A-54D5-5053-50AE-D96DBA03E605">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 19:06:58 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>100</autoIncrementCache>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="delivery_company_name" id="F3B91CDF-DAA5-E1DE-6C56-8E79E6D00402">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>FD4DD9B9-4DF4-1A40-E197-D66BF0ACB4EB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9B1FEAAD-7BFA-0230-7B7D-138D4EAA5A73</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B29186F9-6B9E-DC09-F785-36361AD0EC6F" name="delivery_company_pk">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>004AD167-B0A5-6F5C-99B6-862D3E0BA1F8</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="023BD79A-54D5-5053-50AE-D96DBA03E605"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F0F0C0A-E9C9-8D26-3FBF-9DF99CB20C40" name="delivery_company_name_uk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 19:07:19 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3B91CDF-DAA5-E1DE-6C56-8E79E6D00402"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
