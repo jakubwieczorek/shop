@@ -3,10 +3,14 @@ package wieczorek.jakub.shop.business.spring.client.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Setter
 @Getter
 public class CustomerDTO
 {
+    private Long customerId;
+
     private String email;
 
     private String surname;
@@ -26,4 +30,6 @@ public class CustomerDTO
     private Long flatNumber;
 
     private String password;
+
+    private List<OrderDTO> orders;
 }

@@ -5,4 +5,12 @@
 <ownerDesignName>shop_model</ownerDesignName>
 <capitalNames>false</capitalNames>
 <designId>D8D9E18F-F4C5-3865-1241-542918360619</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="267DDB36-A51E-76D7-CC82-D2FA691807E2">
+<designStoragePath>/shop_init_db</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="0B1E3C86-C3F3-7442-64C0-ABD2FE01894C">
+<designStoragePath>/shop_init_db</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>

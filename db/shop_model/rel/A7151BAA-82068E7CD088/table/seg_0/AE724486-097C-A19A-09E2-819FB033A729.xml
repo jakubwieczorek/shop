@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE724486-097C-A19A-09E2-819FB033A729" name="customer">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>2ED6CF8C-79F0-BE99-99F6-D18B18EFCA95</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="customer_id" id="511E5312-C051-42DA-48DB-4D408A4E1DF5">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 17:01:04 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>100</autoIncrementCache>
+<autoIncrementGenerateTrigger>false</autoIncrementGenerateTrigger>
+</Column>
+<Column name="email" id="34496278-6F16-20B3-B914-9061B820D93E">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>F69C4909-93CF-B16C-F32A-1C1462A36F03</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9A805439-890C-1065-D920-23CF0610689C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="surname" id="D59411B7-0C4B-4B87-F5F8-3E596EAFA4F5">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>65711278-7D9E-8BA7-750E-1B89658DE6B2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1363CBCD-C791-E079-DF63-4E2701F97852</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="94C3D0C5-A20B-8968-8EA6-E82DEF8478E0">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>5F496B62-EBC1-FA6E-F125-E901DDBF049A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1363CBCD-C791-E079-DF63-4E2701F97852</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="EBE791BC-2778-3566-D5E7-AEB494C7A322">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>9581D2F9-F7B5-700C-AF51-85224A5554E1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1363CBCD-C791-E079-DF63-4E2701F97852</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="postal_code" id="022D17AA-943A-D4DB-A317-E7A0C698B8FB">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>715065F8-09E4-B1B0-9E02-DB9E3617C349</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>03D3E60B-653B-7F3D-97E5-226636271C1F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="house_number" id="2AF1F3FA-5224-1715-5B34-8C10305F37B8">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>55EC0E78-B385-F1AD-AB7E-790A9CF78554</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>3D840EB6-E5D0-83D1-4F18-806235731E2B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="AA8F00A1-7926-7085-B801-6AE03C0314D0">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>C8565EA8-06D9-014E-FB49-0749F3665A88</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9B1FEAAD-7BFA-0230-7B7D-138D4EAA5A73</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="street" id="CDD0A3D7-FA50-C3FB-7817-1F9D70E18A8C">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>24EC0C8D-DD0E-EF50-DAC8-BB4097CE0398</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1363CBCD-C791-E079-DF63-4E2701F97852</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="flat_number" id="0A1B4194-BDB9-97B4-6DA6-9854B4AE927B">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>0B3CE2A6-B25E-8DF1-8E49-ED950932EF31</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>3D840EB6-E5D0-83D1-4F18-806235731E2B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="7464CAD9-DCE4-379D-E16D-DAB40F748984">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>12A3F8E0-7E48-E967-25EB-BF535080E7C9</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1363CBCD-C791-E079-DF63-4E2701F97852</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B638C854-C54E-D1C3-3871-65DDE3A6CB23" name="customer_pk">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>A5B3774F-4A54-A9C9-AFF2-CD86591DA0F1</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="511E5312-C051-42DA-48DB-4D408A4E1DF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD58C24A-BA12-CC3E-9F6B-54D80C73FF76" name="customer_email_uk">
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 17:01:41 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34496278-6F16-20B3-B914-9061B820D93E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

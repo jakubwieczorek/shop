@@ -1,6 +1,9 @@
 package wieczorek.jakub.shop.business.spring.model.domain;
 
+import org.hibernate.Session;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
 
@@ -19,6 +23,8 @@ import java.util.List;
 @ContextConfiguration(classes = {BusinessConfig.class})
 @TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Sql("init.sql")
+@Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class CustomerTest
 {
     @Autowired
@@ -52,7 +58,22 @@ public class CustomerTest
         entityManager.flush();
 
         // Then
-        Customer expectedCustomer = entityManager.find(Customer.class, "MAIL");
-        Assert.assertEquals(expectedCustomer.getEmail(), customer.getEmail());
+        Customer expectedCustomer = entityManager.getEntityManager().createQuery("select c from Customer c where c.email = :email", Customer.class)
+                .setParameter("email", "MAIL").getSingleResult();
+
+        Assert.assertNotNull(expectedCustomer);
+    }
+
+    @Test
+    public void selectOrdersForCustomer()
+    {
+        // Given
+        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId( Customer.class).load("malgorzata1234@op.pl");
+
+        // when
+        List<Order> orders = customer.getOrders();
+
+        //then
+        Assert.assertFalse(orders.isEmpty());
     }
 }

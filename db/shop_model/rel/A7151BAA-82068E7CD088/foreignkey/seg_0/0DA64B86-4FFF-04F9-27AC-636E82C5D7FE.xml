@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0DA64B86-4FFF-04F9-27AC-636E82C5D7FE" containerWithKeyObject="733307CE-9CC0-E3BE-8E90-72BE0AA4DBF1" localFKIndex="0F3E8AD1-A370-E65F-AB72-9EC9FBD26429" name="promotion_product_fk">
+<sourceDDLFile>shop_init_db.ddl</sourceDDLFile>
+<createdBy>jakub</createdBy>
+<createdTime>2020-07-04 16:58:57 UTC</createdTime>
+<ownerDesignName>shop_model</ownerDesignName>
+<importedID>88959689-1F60-BC93-D1B6-B7B8448D27FA</importedID>
+<referredTableLongName>product</referredTableLongName>
+<arc>F0149343-F361-528E-2C90-D7C379178BCC</arc>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>B9608991-978A-D7D1-962E-3A382138ADE3</referredTableID>
+<keyObject>7A7E54DF-6430-0444-C2FC-3B79D4A20FB6</keyObject>
+<referredKeyID>7A7E54DF-6430-0444-C2FC-3B79D4A20FB6</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>product_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
