@@ -11,8 +11,6 @@ public class OrderDTO
 {
     private Long orderId;
 
-    private Long deliveryId;
-
     private BigDecimal costOfProducts;
 
     private BigDecimal costOfDelivery;

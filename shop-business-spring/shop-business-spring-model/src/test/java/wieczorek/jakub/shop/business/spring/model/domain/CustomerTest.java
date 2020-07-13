@@ -1,9 +1,7 @@
 package wieczorek.jakub.shop.business.spring.model.domain;
 
 import org.hibernate.Session;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +13,18 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
+import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
+import wieczorek.jakub.shop.business.spring.client.dto.OrderDTO;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {BusinessConfig.class})
-@TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@TestPropertySource(locations = "classpath:application-test.properties")
 @Sql("init.sql")
 @Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class CustomerTest
@@ -75,5 +77,48 @@ public class CustomerTest
 
         //then
         Assert.assertFalse(orders.isEmpty());
+    }
+
+    @Test
+    public void customerToDTO()
+    {
+        // Given
+        Customer customer = new Customer();
+        List<Order>orders = new ArrayList<>();
+        Order order1 = new Order();
+        Order order2 = new Order();
+        order1.setCostOfDelivery(BigDecimal.valueOf(10));
+        order2.setCostOfDelivery(BigDecimal.valueOf(15));
+        orders.add(order1);
+        orders.add(order2);
+        customer.setOrders(orders);
+
+        // when
+        CustomerDTO customerDTO = customer.toDTO();
+
+        // then
+        Assert.assertEquals(order1.getCostOfDelivery(), customerDTO.getOrders().get(0).getCostOfDelivery());
+        Assert.assertEquals(order2.getCostOfDelivery(), customerDTO.getOrders().get(1).getCostOfDelivery());
+    }
+
+    @Test
+    public void customerFromDTO()
+    {
+        CustomerDTO customerDTO = new CustomerDTO();
+        List<OrderDTO>orders = new ArrayList<>();
+        OrderDTO order1 = new OrderDTO();
+        OrderDTO order2 = new OrderDTO();
+        order1.setCostOfDelivery(BigDecimal.valueOf(10));
+        order2.setCostOfDelivery(BigDecimal.valueOf(15));
+        orders.add(order1);
+        orders.add(order2);
+        customerDTO.setOrders(orders);
+
+        // when
+        Customer customer = new Customer(customerDTO);
+
+        // then
+        Assert.assertEquals(order1.getCostOfDelivery(), customer.getOrders().get(0).getCostOfDelivery());
+        Assert.assertEquals(order2.getCostOfDelivery(), customer.getOrders().get(1).getCostOfDelivery());
     }
 }

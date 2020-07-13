@@ -7,6 +7,7 @@ import org.hibernate.annotations.NaturalId;
 import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,6 @@ import java.util.stream.Collectors;
 @Setter
 public class Customer
 {
-
     @Id
     @SequenceGenerator(name = "customer_id_sequence", sequenceName = "customer_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "customer_id_sequence", strategy = GenerationType.SEQUENCE)
@@ -48,9 +48,14 @@ public class Customer
 
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "order_id")
-    private List<Order>orders;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order>orders = new LinkedList<>();
+
+    public void addOrder(Order order)
+    {
+        orders.add(order);
+        order.setCustomer(this);
+    }
 
     public Customer()
     {

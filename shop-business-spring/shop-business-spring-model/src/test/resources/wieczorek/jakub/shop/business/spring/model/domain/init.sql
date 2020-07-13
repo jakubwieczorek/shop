@@ -63,8 +63,10 @@ insert into Customer values (CUSTOMER_ID_SEQUENCE.nextval, 'malgorzata1234@op.pl
 insert into Delivery values (DELIVERY_ID_SEQUENCE.nextval, 88.99, TO_DATE('25/06/2020', 'DD/MM/YYYY'), 1);
 insert into Orders values (ORDER_ID_SEQUENCE.nextval, 1, 1, 10, 15, 25);
 
-insert into Product_Order values (2, 1, 1);
-insert into Product_Order values (1, 3, 1);
+
+
+insert into Product_Order (amount_of_ordered_products, product_id, order_id) values (2, 1, 1);
+insert into Product_Order (amount_of_ordered_products, product_id, order_id) values (1, 3, 1);
 
 insert into Promotion values (PROMOTION_ID_SEQUENCE.nextval, null, 3, 30, '30% for all tablets!',
     TO_DATE('30/06/2020', 'DD/MM/YYYY'), null);
