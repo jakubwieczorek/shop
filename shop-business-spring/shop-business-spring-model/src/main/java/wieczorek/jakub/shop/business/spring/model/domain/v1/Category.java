@@ -1,4 +1,4 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +31,10 @@ public class Category
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<Product> products = new HashSet<>();
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "promotion_id")
+    private Promotion promotion;
 
     public void addProduct(Product product)
     {

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import wieczorek.jakub.shop.business.spring.beans.ds.ShopDAO;
 import wieczorek.jakub.shop.business.spring.client.boundry.TestBean;
 import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
-import wieczorek.jakub.shop.business.spring.model.domain.Customer;
+import wieczorek.jakub.shop.business.spring.model.domain.v1.Customer;
 
 import java.util.ArrayList;
 import java.util.List;

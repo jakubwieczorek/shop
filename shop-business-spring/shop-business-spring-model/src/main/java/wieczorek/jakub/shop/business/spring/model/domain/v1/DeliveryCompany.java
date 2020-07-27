@@ -1,4 +1,4 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Table(name = "delivery_company")
 @Setter
 @Getter
-class DeliveryCompany {
+public class DeliveryCompany {
 
     @Id
     @Column(name = "delivery_company_id")

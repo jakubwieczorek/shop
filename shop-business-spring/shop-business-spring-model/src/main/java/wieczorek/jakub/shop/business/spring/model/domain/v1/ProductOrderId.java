@@ -1,4 +1,4 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.util.Objects;
 @Embeddable
 @Getter
 @Setter
-class ProductOrderId implements Serializable
+public class ProductOrderId implements Serializable
 {
     @Column(name = "product_id")
     private Long productId;

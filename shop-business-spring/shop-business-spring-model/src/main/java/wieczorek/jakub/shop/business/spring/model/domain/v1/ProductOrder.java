@@ -1,7 +1,6 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "product_order")
 @Setter
 @Getter
-class ProductOrder
+public class ProductOrder
 {
     @EmbeddedId
     private ProductOrderId productOrderId = new ProductOrderId();

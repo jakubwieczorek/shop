@@ -1,11 +1,9 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import org.aspectj.weaver.ast.Or;
 import wieczorek.jakub.shop.business.spring.client.dto.DeliveryDTO;
-import wieczorek.jakub.shop.business.spring.client.dto.OrderDTO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -18,26 +16,30 @@ import java.util.stream.Collectors;
 @Table(name = "Delivery")
 @Getter
 @Setter
-class Delivery
+public class Delivery
 {
     @Id
     @SequenceGenerator(name = "delivery_id_sequence", sequenceName = "delivery_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "delivery_id_sequence", strategy = GenerationType.SEQUENCE)
     @Setter(value = AccessLevel.NONE)
     @Column(name = "delivery_id")
-    public Long deliveryId;
+    private Long deliveryId;
 
-    public BigDecimal price;
+    private BigDecimal price;
 
     @Temporal(TemporalType.DATE)
-    public Date deliveryTime;
+    private Date deliveryTime;
 
     @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL)
-    public List<Order>orders = new LinkedList<>();
+    private List<Order>orders = new LinkedList<>();
 
     @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_company_id", nullable = false)
-    public DeliveryCompany deliveryCompany;
+    private DeliveryCompany deliveryCompany;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "promotion_id")
+    private Promotion promotion;
 
     public void addOrder(Order order)
     {

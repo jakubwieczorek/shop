@@ -1,12 +1,10 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
-import org.hibernate.Session;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
@@ -15,13 +13,8 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
-import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
-import wieczorek.jakub.shop.business.spring.client.dto.OrderDTO;
 
-import javax.persistence.TemporalType;
 import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -33,6 +26,7 @@ import java.util.List;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Sql("init.sql")
 @Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@EntityScan(basePackages = "wieczorek.jakub.shop.business.spring.model.domain.v1")
 public class DomainTest
 {
     @Autowired
@@ -123,6 +117,18 @@ public class DomainTest
         Category category = new Category();
         category.setCategoryName("category_name");
 
+        // new promotion
+        Promotion promotion = new Promotion();
+        promotion.setDeadline(new Date());
+        promotion.setDescription("description");
+        promotion.setPercentage(BigDecimal.valueOf(30));
+
+        // new promotion
+        Promotion promotion2 = new Promotion();
+        promotion2.setDeadline(new Date());
+        promotion2.setDescription("description");
+        promotion2.setPercentage(BigDecimal.valueOf(30));
+
         // relationships
         customer.addOrder(order);
         delivery.addOrder(order);
@@ -131,6 +137,8 @@ public class DomainTest
         productOrder2.addProductOrder(order, product2);
         category.addProduct(product1);
         category.addProduct(product2);
+        promotion.addProduct(product1);
+        promotion2.addCategory(category);
 
 //        //entityManager.persist(deliveryCompany);
 //        //entityManager.persist(delivery);
@@ -151,6 +159,8 @@ public class DomainTest
         //entityManager.persist(product2);
         entityManager.persist(productOrder);
         entityManager.persist(productOrder2);
+        entityManager.persist(promotion);
+        entityManager.persist(promotion2);
 
         entityManager.flush();
     }

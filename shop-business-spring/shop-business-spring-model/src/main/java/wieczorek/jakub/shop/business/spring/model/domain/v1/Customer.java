@@ -1,4 +1,4 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.AccessLevel;
 import lombok.Getter;

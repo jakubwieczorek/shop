@@ -1,6 +1,5 @@
-package wieczorek.jakub.shop.business.spring.model.domain;
+package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import wieczorek.jakub.shop.business.spring.client.dto.ProductDTO;
@@ -14,7 +13,7 @@ import java.util.Set;
 @Table(name = "product")
 @Setter
 @Getter
-class Product
+public class Product
 {
     @Id
     @Column(name = "product_id")
@@ -36,14 +35,20 @@ class Product
     @OneToMany(mappedBy = "product")
     private Set<ProductOrder> productOrders= new HashSet<>();
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    //@ManyToOne(fetch = FetchType.LAZY) when this update is generated
+    @JoinColumn(name = "promotion_id")
+    private Promotion promotion;
 
     public Product()
     {
 
     }
+
 
     public Product(ProductDTO productDTO)
     {
