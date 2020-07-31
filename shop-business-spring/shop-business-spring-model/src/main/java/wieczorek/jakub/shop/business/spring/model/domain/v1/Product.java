@@ -37,10 +37,11 @@ public class Product
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
+    //@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    //@JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
-    //@ManyToOne(fetch = FetchType.LAZY) when this update is generated
     @JoinColumn(name = "promotion_id")
     private Promotion promotion;
 
@@ -48,7 +49,6 @@ public class Product
     {
 
     }
-
 
     public Product(ProductDTO productDTO)
     {

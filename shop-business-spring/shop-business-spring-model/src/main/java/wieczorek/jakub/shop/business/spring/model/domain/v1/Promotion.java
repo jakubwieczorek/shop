@@ -28,7 +28,6 @@ public class Promotion
     @Temporal(TemporalType.TIMESTAMP)
     private Date deadline;
 
-    //@OneToMany(mappedBy = "promotion")
     @OneToMany(mappedBy = "promotion", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     private List<Product> products = new LinkedList<>();
 

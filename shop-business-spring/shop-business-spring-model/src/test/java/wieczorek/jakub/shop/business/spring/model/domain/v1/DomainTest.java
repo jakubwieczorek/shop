@@ -1,6 +1,7 @@
 package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,6 @@ public class DomainTest
 {
     @Autowired
     private TestEntityManager entityManager;
-
 
     @Test
     public void selectProducts()
@@ -150,17 +150,50 @@ public class DomainTest
 //        entityManager.persist(productOrder);
 //        entityManager.persist(productOrder2);
 
-        entityManager.persist(deliveryCompany);
+        entityManager.persist(promotion);
+        //entityManager.persist(deliveryCompany);
         //entityManager.persist(delivery);
         entityManager.persist(customer);
         //entityManager.persist(order);
         entityManager.persist(category);
-        //entityManager.persist(product1);
-        //entityManager.persist(product2);
+        //entityManager.persist(product1); // when persist done on owning side (product) no update is generated.
+        entityManager.persist(product2);
         entityManager.persist(productOrder);
         entityManager.persist(productOrder2);
-        entityManager.persist(promotion);
-        entityManager.persist(promotion2);
+        //entityManager.persist(promotion2);
+
+        entityManager.flush();
+    }
+
+    @Test
+    @Ignore// will not work, because of constraints, if you want to run it add
+//    ALTER TABLE product DROP CONSTRAINT product_category_fk;
+//    Alter table product drop column category_id;
+//    Alter table product add category_id NUMBER(3); // here normally is not null
+    public void testProduct()
+    {
+        // new product
+        Product product1 = new Product();
+        product1.setProductName("product1");
+        product1.setProductPrice(BigDecimal.ONE);
+        product1.setAmountInStock(2L);
+        product1.setDescription("description");
+        product1.setSoldAmount(4L);
+        product1.setWeight(BigDecimal.TEN);
+        product1.setVendor("vendor");
+        product1.setProductionYear(2020L);
+        product1.setSize("Size");
+
+        // new promotion
+        Promotion promotion = new Promotion();
+        promotion.setDeadline(new Date());
+        promotion.setDescription("description");
+        promotion.setPercentage(BigDecimal.valueOf(30));
+
+        promotion.addProduct(product1);
+
+        entityManager.persist(product1);
+        //entityManager.persist(promotion);
 
         entityManager.flush();
     }
