@@ -38,17 +38,13 @@ public class Order
     @OneToMany(mappedBy = "order")
     private Set<ProductOrder> productOrders = new HashSet<>();
 
-//    public void addProduct(Product product)
-//    {
-//        products.add(product);
-//        product.getOrders().add(this);
-//    }
-//
-//    public void removeProduct(Product product)
-//    {
-//        products.remove(product);
-//        product.getOrders().remove(this);
-//    }
+    @ManyToMany
+    @JoinTable(
+            name = "complaints_for_orders",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "complaint_id")
+    )
+    private Set<Complaint> complaints = new HashSet<>();
 
     public OrderDTO toDTO()
     {

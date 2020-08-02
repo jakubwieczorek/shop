@@ -129,6 +129,11 @@ public class DomainTest
         promotion2.setDescription("description");
         promotion2.setPercentage(BigDecimal.valueOf(30));
 
+        Complaint complaint = new Complaint();
+        complaint.setComplaintTime(new Date());
+        complaint.setContent("content");
+        complaint.addOrder(order);
+
         // relationships
         customer.addOrder(order);
         delivery.addOrder(order);
@@ -140,27 +145,18 @@ public class DomainTest
         promotion.addProduct(product1);
         promotion2.addCategory(category);
 
-//        //entityManager.persist(deliveryCompany);
-//        //entityManager.persist(delivery);
-//        entityManager.persist(customer);
-//        //entityManager.persist(order);
-//        entityManager.persist(category);
-//        //entityManager.persist(product1);
-//        //entityManager.persist(product2);
-//        entityManager.persist(productOrder);
-//        entityManager.persist(productOrder2);
-
         entityManager.persist(promotion);
         //entityManager.persist(deliveryCompany);
         //entityManager.persist(delivery);
         entityManager.persist(customer);
         //entityManager.persist(order);
         entityManager.persist(category);
-        //entityManager.persist(product1); // when persist done on owning side (product) no update is generated.
+        //entityManager.persist(product1);
         entityManager.persist(product2);
         entityManager.persist(productOrder);
         entityManager.persist(productOrder2);
         //entityManager.persist(promotion2);
+        entityManager.persist(complaint);
 
         entityManager.flush();
     }

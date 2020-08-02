@@ -1,0 +1,1 @@
+alter table COMPLAINT add content VARCHAR2(1000 char) NOT NULL;
