@@ -1,6 +1,5 @@
 package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import wieczorek.jakub.shop.business.spring.client.dto.DeliveryDTO;
@@ -21,7 +20,6 @@ public class Delivery
     @Id
     @SequenceGenerator(name = "delivery_id_sequence", sequenceName = "delivery_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "delivery_id_sequence", strategy = GenerationType.SEQUENCE)
-    @Setter(value = AccessLevel.NONE)
     @Column(name = "delivery_id")
     private Long deliveryId;
 
@@ -30,14 +28,14 @@ public class Delivery
     @Temporal(TemporalType.DATE)
     private Date deliveryTime;
 
-    @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order>orders = new LinkedList<>();
 
-    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_company_id", nullable = false)
     private DeliveryCompany deliveryCompany;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "promotion_id")
     private Promotion promotion;
 

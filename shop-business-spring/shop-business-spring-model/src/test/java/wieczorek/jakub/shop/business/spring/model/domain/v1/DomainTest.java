@@ -1,6 +1,8 @@
 package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
+import org.hibernate.Session;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +18,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,53 +34,13 @@ public class DomainTest
     @Autowired
     private TestEntityManager entityManager;
 
-    @Test
-    public void selectProducts()
+    @Before
+    public void setUp()
     {
-        List<Product>products = entityManager.getEntityManager().createQuery("select p from Product p", Product.class).getResultList();
-        Assert.assertNotNull(products);
-        Assert.assertFalse(products.isEmpty());
-    }
-
-    @Test
-    public void selectOrder()
-    {
-        Order order = entityManager.getEntityManager().createQuery("select p from Order p where p.orderId = 1", Order.class).getSingleResult();
-        Assert.assertEquals(2, order.getProductOrders().size());
-    }
-
-    @Test
-    public void newClientNewOrderPersist()
-    {
-        // new customer
-        Customer customer = new Customer();
-        customer.setCity("CITY");
-        customer.setEmail("MAIL");
-        customer.setFirstName("FIRSTNAME");
-        customer.setFlatNumber(2L);
-        customer.setHouseNumber(2L);
-        customer.setPassword("PASSWORD");
-        customer.setPostalCode("POSTAL");
-        customer.setPhoneNumber("PHONENUMBER");
-        customer.setSurname("SURNAME");
-        customer.setStreet("STREET");
-
-        // new order
-        Order order = new Order();
-        order.setCostOfProducts(BigDecimal.valueOf(4));
-        order.setCostOfDelivery(BigDecimal.valueOf(3));
-        order.setFinalCost(BigDecimal.valueOf(7));
-
-        // new delivery
-        Delivery delivery = new Delivery();
-        delivery.setDeliveryTime(new Date());
-        delivery.setPrice(BigDecimal.valueOf(5));
-        delivery.setOrders(new ArrayList<>());
-        delivery.getOrders().add(order);
-
-        // new deliveryCompany
-        DeliveryCompany deliveryCompany = new DeliveryCompany();
-        deliveryCompany.setDeliveryCompanyName("aa");
+        // new category
+        Category category = new Category();
+        category.setCategoryName("category_name");
+        entityManager.persist(category);
 
         // new product
         Product product1 = new Product();
@@ -105,17 +66,53 @@ public class DomainTest
         product2.setProductionYear(2020L);
         product2.setSize("Size");
 
-        // new productOrder
+        // add product to category
+        category.addProduct(product1);
+        category.addProduct(product2);
+
+        // new deliveryCompany
+        DeliveryCompany deliveryCompany = new DeliveryCompany();
+        deliveryCompany.setDeliveryCompanyName("aa");
+        entityManager.persist(deliveryCompany);
+
+        // new customer
+        Customer customer = new Customer();
+        customer.setCity("CITY");
+        customer.setEmail("MAIL");
+        customer.setFirstName("FIRSTNAME");
+        customer.setFlatNumber(2L);
+        customer.setHouseNumber(2L);
+        customer.setPassword("PASSWORD");
+        customer.setPostalCode("POSTAL");
+        customer.setPhoneNumber("PHONENUMBER");
+        customer.setSurname("SURNAME");
+        customer.setStreet("STREET");
+        entityManager.persist(customer);
+
+        // new order
+        Order order = new Order();
+        order.setCostOfProducts(BigDecimal.valueOf(4));
+        order.setCostOfDelivery(BigDecimal.valueOf(3));
+        order.setFinalCost(BigDecimal.valueOf(7));
+        customer.addOrder(order);
+
+        // new delivery
+        Delivery delivery = new Delivery();
+        delivery.setDeliveryTime(new Date());
+        delivery.setPrice(BigDecimal.valueOf(5));
+        delivery.addOrder(order);
+        deliveryCompany.addDelivery(delivery);
+        entityManager.persist(delivery);
+
+        // add products to order
         ProductOrder productOrder = new ProductOrder();
         productOrder.setAmountOfOrderedProducts(5L);
-
-        // new productOrder
         ProductOrder productOrder2 = new ProductOrder();
         productOrder2.setAmountOfOrderedProducts(2L);
-
-        // new category
-        Category category = new Category();
-        category.setCategoryName("category_name");
+        productOrder.addProductOrder(order, product1);
+        productOrder2.addProductOrder(order, product2);
+        entityManager.persist(productOrder);
+        entityManager.persist(productOrder2);
 
         // new promotion
         Promotion promotion = new Promotion();
@@ -129,36 +126,66 @@ public class DomainTest
         promotion2.setDescription("description");
         promotion2.setPercentage(BigDecimal.valueOf(30));
 
+        promotion.addProduct(product1);
+        promotion2.addCategory(category);
+        entityManager.persist(promotion);
+        entityManager.persist(promotion2);
+
+        // new complaint
         Complaint complaint = new Complaint();
         complaint.setComplaintTime(new Date());
         complaint.setContent("content");
         complaint.addOrder(order);
-
-        // relationships
-        customer.addOrder(order);
-        delivery.addOrder(order);
-        deliveryCompany.addDelivery(delivery);
-        productOrder.addProductOrder(order, product1);
-        productOrder2.addProductOrder(order, product2);
-        category.addProduct(product1);
-        category.addProduct(product2);
-        promotion.addProduct(product1);
-        promotion2.addCategory(category);
-
-        entityManager.persist(promotion);
-        //entityManager.persist(deliveryCompany);
-        //entityManager.persist(delivery);
-        entityManager.persist(customer);
-        //entityManager.persist(order);
-        entityManager.persist(category);
-        //entityManager.persist(product1);
-        entityManager.persist(product2);
-        entityManager.persist(productOrder);
-        entityManager.persist(productOrder2);
-        //entityManager.persist(promotion2);
         entityManager.persist(complaint);
 
         entityManager.flush();
+        // 2 updates added because of promotion and complaint
+    }
+
+    @Test
+    public void selectProducts()
+    {
+        List<Product>products = entityManager.getEntityManager().createQuery("select p from Product p", Product.class).getResultList();
+        Assert.assertNotNull(products);
+        Assert.assertFalse(products.isEmpty());
+    }
+
+    @Test
+    public void selectOrder()
+    {
+        Order order = entityManager.getEntityManager().createQuery("select p from Order p where p.orderId = 1", Order.class).getSingleResult();
+        Assert.assertEquals(2, order.getProductOrders().size());
+    }
+
+    @Test
+    public void given_Customer_InDb_when_delete_then_Customer_and_Orders_deleted()
+    {
+        // given
+        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+        Long orderId = customer.getOrders().get(0).getOrderId();
+
+        // when
+        entityManager.remove(customer);
+        entityManager.flush();
+
+        // then
+        Customer customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+        Order order2 = entityManager.find(Order.class, orderId);
+        Assert.assertNull(customer2);
+        // Assert.assertNull(order2);
+    }
+
+    @Test
+    public void given_Customer_InDb_when_bySimpleNaturalId_then_Customer()
+    {
+        // given
+        // Customer flushed to db
+
+        // when
+        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+
+        // then
+        Assert.assertNotNull(customer);
     }
 
     @Test

@@ -1,6 +1,5 @@
 package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
@@ -23,7 +22,6 @@ public class Customer
 //    @GenericGenerator(name = "order_id_sequence", strategy = "sequence", parameters = {
 //            @Parameter(name="sequence", value="order_id_sequence")
 //    })
-    @Setter(AccessLevel.NONE)
     private Long customerId;
 
     @NaturalId
@@ -55,6 +53,12 @@ public class Customer
     {
         orders.add(order);
         order.setCustomer(this);
+    }
+
+    public void deleteOrder(Order order)
+    {
+        order.setCustomer(null);
+        orders.remove(order);
     }
 
     public Customer()

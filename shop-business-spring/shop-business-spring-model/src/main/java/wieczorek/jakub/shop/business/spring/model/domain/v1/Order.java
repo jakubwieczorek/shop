@@ -27,11 +27,11 @@ public class Order
 
     private BigDecimal finalCost;
 
-    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_id", nullable = false)
     private Delivery delivery;
 
-    @ManyToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
@@ -45,6 +45,8 @@ public class Order
             inverseJoinColumns = @JoinColumn(name = "complaint_id")
     )
     private Set<Complaint> complaints = new HashSet<>();
+
+
 
     public OrderDTO toDTO()
     {

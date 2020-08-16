@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Table(name = "category")
@@ -19,20 +19,20 @@ public class Category
     @GeneratedValue(generator = "category_id_sequence", strategy = GenerationType.SEQUENCE)
     private Long categoryId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_category_id")
     private Category parentCategory;
 
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Category> subCategories = new HashSet<>();
+    private List<Category> subCategories = new LinkedList<>();
 
     @Column(name= "category_name", unique = true)
     private String categoryName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Product> products = new HashSet<>();
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Product> products = new LinkedList<>();
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "promotion_id")
     private Promotion promotion;
 
