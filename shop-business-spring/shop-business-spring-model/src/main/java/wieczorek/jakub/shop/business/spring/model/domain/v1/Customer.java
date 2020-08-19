@@ -55,7 +55,7 @@ public class Customer
         order.setCustomer(this);
     }
 
-    public void deleteOrder(Order order)
+    public void removeOrder(Order order)
     {
         order.setCustomer(null);
         orders.remove(order);

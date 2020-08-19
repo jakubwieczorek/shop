@@ -2,6 +2,7 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.NaturalId;
 import wieczorek.jakub.shop.business.spring.client.dto.DeliveryCompanyDTO;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class DeliveryCompany {
     private Long deliveryCompanyId;
 
     @Column(unique = true)
+    @NaturalId
     private String deliveryCompanyName;
 
     @OneToMany(mappedBy = "deliveryCompany", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -31,6 +33,12 @@ public class DeliveryCompany {
     {
         deliveries.add(delivery);
         delivery.setDeliveryCompany(this);
+    }
+
+    public void removeDelivery(Delivery delivery)
+    {
+        deliveries.remove(delivery);
+        delivery.setDeliveryCompany(null);
     }
 
     public DeliveryCompany()

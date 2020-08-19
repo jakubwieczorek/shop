@@ -38,4 +38,10 @@ public class Complaint
         orders.add(order);
         order.getComplaints().add(this);
     }
+
+    public void removeOrder(Order order)
+    {
+        orders.remove(order);
+        order.getComplaints().remove(this);
+    }
 }

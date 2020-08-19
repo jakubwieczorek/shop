@@ -45,6 +45,12 @@ public class Delivery
         order.setDelivery(this);
     }
 
+    public void removeOrder(Order order)
+    {
+        orders.remove(order);
+        order.setDelivery(null);
+    }
+
     public Delivery()
     {
 

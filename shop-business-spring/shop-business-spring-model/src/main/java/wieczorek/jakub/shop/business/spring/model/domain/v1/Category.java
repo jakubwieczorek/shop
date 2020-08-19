@@ -2,6 +2,7 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.LinkedList;
@@ -27,6 +28,7 @@ public class Category
     private List<Category> subCategories = new LinkedList<>();
 
     @Column(name= "category_name", unique = true)
+    @NaturalId
     private String categoryName;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -42,9 +44,21 @@ public class Category
         product.setCategory(this);
     }
 
+    public void removeProduct(Product product)
+    {
+        products.remove(product);
+        product.setCategory(null);
+    }
+
     public void addSubCategory(Category category)
     {
         subCategories.add(category);
         category.setParentCategory(this);
+    }
+
+    public void removeSubCategory(Category category)
+    {
+        subCategories.remove(category);
+        category.setParentCategory(null);
     }
 }

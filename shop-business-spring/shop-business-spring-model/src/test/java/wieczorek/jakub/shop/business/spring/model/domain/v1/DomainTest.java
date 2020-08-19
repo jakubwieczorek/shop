@@ -140,6 +140,17 @@ public class DomainTest
 
         entityManager.flush();
         // 2 updates added because of promotion and complaint
+
+
+        // remove order references
+        //delivery.removeOrder(order);
+        //customer.removeOrder(order);
+
+        //entityManager.remove(complaint); // because of no cascade
+        //entityManager.remove(delivery);
+        //entityManager.remove(order);
+
+        //entityManager.flush();
     }
 
     @Test
@@ -157,35 +168,118 @@ public class DomainTest
         Assert.assertEquals(2, order.getProductOrders().size());
     }
 
-    @Test
-    public void given_Customer_InDb_when_delete_then_Customer_and_Orders_deleted()
-    {
-        // given
-        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
-        Long orderId = customer.getOrders().get(0).getOrderId();
+//    @Test
+//    public void given_order_in_customer_when_delete_then_Customer_and_Orders_deleted()
+//    {
+//        // given
+//        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+//
+//        Long orderId = customer.getOrders().get(0).getOrderId();
+//
+//        Order order = customer.getOrders().get(0);
+//        Delivery delivery = order.getDelivery();
+//        Set<ProductOrder> productOrders = order.getProductOrders();
+////        productOrders.
+//
+//
+//
+//        entityManager.remove(delivery);
+//        entityManager.remove(order);
+//
+//        entityManager.flush();
+//
+//        // when
+////        entityManager.remove(customer.getOrders().get(0).getDelivery());
+////        entityManager.remove(customer.getOrders().get(0).getProductOrders());
+////        entityManager.remove(customer.getOrders().get(0));
+////        entityManager.flush();
+//
+////        customer.getOrders().forEach(order -> { customer.deleteOrder(order); entityManager.remove(order); });
+////        entityManager.flush();
+////
+////        entityManager.remove(customer);
+////
+////        entityManager.flush();
+////
+////        // then
+////        Customer customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+////        Order order2 = entityManager.find(Order.class, orderId);
+////        Assert.assertNull(customer2);
+////        // Assert.assertNull(order2);
+//    }
 
-        // when
-        entityManager.remove(customer);
+    @Test
+    public void given_category_with_products_when_category_remove_then_category_and_products_removed()
+    {
+        // Given
+        Category category = new Category();
+        category.setCategoryName("category");
+        entityManager.persist(category);
+
+        Product product1 = new Product();
+        product1.setProductName("product1");
+        product1.setProductPrice(BigDecimal.ONE);
+        product1.setAmountInStock(2L);
+        product1.setDescription("description");
+        product1.setSoldAmount(4L);
+        product1.setWeight(BigDecimal.TEN);
+        product1.setVendor("vendor");
+        product1.setProductionYear(2020L);
+        product1.setSize("Size");
+
+        Product product2 = new Product();
+        product2.setProductName("product2");
+        product2.setProductPrice(BigDecimal.ONE);
+        product2.setAmountInStock(2L);
+        product2.setDescription("description");
+        product2.setSoldAmount(4L);
+        product2.setWeight(BigDecimal.TEN);
+        product2.setVendor("vendor");
+        product2.setProductionYear(2020L);
+        product2.setSize("Size");
+
+        category.addProduct(product1);
+        category.addProduct(product2);
+
         entityManager.flush();
 
-        // then
-        Customer customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
-        Order order2 = entityManager.find(Order.class, orderId);
-        Assert.assertNull(customer2);
-        // Assert.assertNull(order2);
+        Long categoryId = category.getCategoryId();
+        Long product1Id = product1.getProductId();
+        Long product2Id = product2.getProductId();
+
+        // When
+        entityManager.remove(category);
+        entityManager.flush();
+
+        // Then
+        Assert.assertNull(entityManager.find(Category.class, categoryId));
+        Assert.assertNull(entityManager.find(Product.class, product1Id));
+        Assert.assertNull(entityManager.find(Product.class, product2Id));
     }
 
     @Test
-    public void given_Customer_InDb_when_bySimpleNaturalId_then_Customer()
+    public void given_Customer_when_bySimpleNaturalId_then_Customer()
     {
-        // given
-        // Customer flushed to db
+        // Given
+        Customer customer = new Customer();
+        customer.setCity("CITY");
+        customer.setEmail("MAIL2");
+        customer.setFirstName("FIRSTNAME");
+        customer.setFlatNumber(2L);
+        customer.setHouseNumber(2L);
+        customer.setPassword("PASSWORD");
+        customer.setPostalCode("POSTAL");
+        customer.setPhoneNumber("PHONENUMBER");
+        customer.setSurname("SURNAME");
+        customer.setStreet("STREET");
+        entityManager.persist(customer);
+        entityManager.flush();
 
         // when
-        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+        Customer customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL2");
 
         // then
-        Assert.assertNotNull(customer);
+        Assert.assertNotNull(customer2);
     }
 
     @Test

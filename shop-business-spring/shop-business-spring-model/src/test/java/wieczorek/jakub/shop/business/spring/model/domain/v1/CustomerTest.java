@@ -2,6 +2,7 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import org.hibernate.Session;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ import java.util.List;
 @Sql("init.sql")
 @Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 @EntityScan(basePackages = "wieczorek.jakub.shop.business.spring.model.domain.v1")
+@Ignore
 public class CustomerTest
 {
     @Autowired

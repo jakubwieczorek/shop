@@ -35,7 +35,7 @@ public class Order
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private Set<ProductOrder> productOrders = new HashSet<>();
 
     @ManyToMany
@@ -46,7 +46,10 @@ public class Order
     )
     private Set<Complaint> complaints = new HashSet<>();
 
-
+    public void removeOrder()
+    {
+        productOrders.forEach(productOrder -> productOrder.setOrder(null));
+    }
 
     public OrderDTO toDTO()
     {
