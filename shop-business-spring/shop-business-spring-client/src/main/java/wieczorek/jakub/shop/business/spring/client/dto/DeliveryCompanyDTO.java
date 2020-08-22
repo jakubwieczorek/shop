@@ -9,7 +9,22 @@ import java.util.List;
 @Setter
 public class DeliveryCompanyDTO
 {
+
+    private Long deliveryCompanyId;
+
     private String deliveryCompanyName;
 
     private List<DeliveryDTO> deliveries;
+
+    public void addDelivery(DeliveryDTO delivery)
+    {
+        deliveries.add(delivery);
+        delivery.setDeliveryCompany(this);
+    }
+
+    public void removeDelivery(DeliveryDTO delivery)
+    {
+        deliveries.remove(delivery);
+        delivery.setDeliveryCompany(null);
+    }
 }

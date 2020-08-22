@@ -1,16 +1,17 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
 public class ProductDTO
 {
+    private Long productId;
     private String productName;
     private BigDecimal productPrice;
     private Long amountInStock;
@@ -20,4 +21,7 @@ public class ProductDTO
     private String vendor;
     private Long productionYear;
     private String size;
+    private Set<ProductOrderDTO> productOrders = new HashSet<>();
+    private CategoryDTO category;
+    private PromotionDTO promotion;
 }

@@ -2,7 +2,7 @@ package wieczorek.jakub.shop.business.spring.beans.boundry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wieczorek.jakub.shop.business.spring.beans.ds.ShopDAO;
+import wieczorek.jakub.shop.business.spring.beans.ds.CustomerRepository;
 import wieczorek.jakub.shop.business.spring.client.boundry.TestBean;
 import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.Customer;
@@ -15,17 +15,17 @@ import java.util.stream.StreamSupport;
 @Service
 public class TestBeanImpl implements TestBean
 {
-    private ShopDAO shopDAO;
+    private CustomerRepository customerRepository;
 
     @Autowired
-    public TestBeanImpl(ShopDAO shopDAO)
+    public TestBeanImpl(CustomerRepository customerRepository)
     {
-        this.shopDAO = shopDAO;
+        this.customerRepository = customerRepository;
     }
 
     public List<CustomerDTO> readCustomers()
     {
-        List<Customer> list = StreamSupport.stream(this.shopDAO.findAll().spliterator(), false).collect(Collectors.toList());
+        List<Customer> list = StreamSupport.stream(this.customerRepository.findAll().spliterator(), false).collect(Collectors.toList());
 
         List<CustomerDTO> listDTO = new ArrayList<>();
 

@@ -1,0 +1,19 @@
+DROP SEQUENCE category_id_sequence;
+DROP SEQUENCE complaint_id_sequence;
+DROP SEQUENCE delivery_id_sequence;
+DROP SEQUENCE order_id_sequence;
+DROP SEQUENCE product_id_sequence;
+DROP SEQUENCE promotion_id_sequence;
+DROP SEQUENCE delivery_company_id_sequence;
+DROP SEQUENCE customer_id_sequence;
+DROP SEQUENCE picture_id_sequence;
+
+CREATE SEQUENCE category_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE complaint_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE delivery_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE order_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE product_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE promotion_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE delivery_company_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE customer_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
+CREATE SEQUENCE picture_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;

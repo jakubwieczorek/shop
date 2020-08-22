@@ -2,7 +2,6 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
-import wieczorek.jakub.shop.business.spring.client.dto.ProductDTO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -42,40 +41,4 @@ public class Product
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "promotion_id")
     private Promotion promotion;
-
-    public Product()
-    {
-
-    }
-
-    public Product(ProductDTO productDTO)
-    {
-        setProductName(productDTO.getProductName());
-        setProductPrice(productDTO.getProductPrice());
-        setAmountInStock(productDTO.getAmountInStock());
-        setDescription(productDTO.getDescription());
-        setSoldAmount(productDTO.getSoldAmount());
-        setWeight(productDTO.getWeight());
-        setVendor(productDTO.getVendor());
-        setProductionYear(productDTO.getProductionYear());
-        setSize(productDTO.getSize());
-        //set
-    }
-
-    public ProductDTO toDTO()
-    {
-        ProductDTO productDTO = new ProductDTO();
-
-        productDTO.setProductName(getProductName());
-        productDTO.setProductPrice(getProductPrice());
-        productDTO.setAmountInStock(getAmountInStock());
-        productDTO.setDescription(getDescription());
-        productDTO.setSoldAmount(getSoldAmount());
-        productDTO.setWeight(getWeight());
-        productDTO.setVendor(getVendor());
-        productDTO.setProductionYear(getProductionYear());
-        productDTO.setSize(getSize());
-        //set
-        return productDTO;
-    }
 }

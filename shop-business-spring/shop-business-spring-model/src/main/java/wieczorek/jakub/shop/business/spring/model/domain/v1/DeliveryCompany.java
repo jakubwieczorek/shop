@@ -3,12 +3,10 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
-import wieczorek.jakub.shop.business.spring.client.dto.DeliveryCompanyDTO;
 
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "delivery_company")
@@ -39,24 +37,5 @@ public class DeliveryCompany {
     {
         deliveries.remove(delivery);
         delivery.setDeliveryCompany(null);
-    }
-
-    public DeliveryCompany()
-    {
-
-    }
-
-    public DeliveryCompany(DeliveryCompanyDTO deliveryCompanyDTO)
-    {
-        setDeliveryCompanyName(deliveryCompanyDTO.getDeliveryCompanyName());
-        setDeliveries(deliveryCompanyDTO.getDeliveries().stream().map(Delivery::new).collect(Collectors.toList()));
-    }
-
-    public DeliveryCompanyDTO toDTO()
-    {
-        DeliveryCompanyDTO deliveryCompanyDTO = new DeliveryCompanyDTO();
-        deliveryCompanyDTO.setDeliveryCompanyName(getDeliveryCompanyName());
-        deliveryCompanyDTO.setDeliveries(getDeliveries().stream().map(Delivery::toDTO).collect(Collectors.toList()));
-        return deliveryCompanyDTO;
     }
 }
