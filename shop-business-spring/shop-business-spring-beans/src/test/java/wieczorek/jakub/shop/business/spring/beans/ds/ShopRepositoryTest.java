@@ -1,5 +1,6 @@
 package wieczorek.jakub.shop.business.spring.beans.ds;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.*;
@@ -18,9 +20,11 @@ import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {BusinessConfig.class})
-@PropertySource("classpath:application-test.properties")
+@TestPropertySource("classpath:application-test.properties")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DataJpaTest
+@Sql("classpath:init.sql")
+@Sql(scripts = "classpath:clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class ShopRepositoryTest
 {
     @Autowired
@@ -156,14 +160,34 @@ public class ShopRepositoryTest
         shopDAO.removeOrder(customer, order);
         entityManager.flush();
 
-        //deliveryCompany.removeDelivery(delivery);
-        //delivery.removeOrder(order);
-        //customer.removeOrder(order);
+        // then
+        Assert.assertFalse(customer.getOrders().contains(order));
+        Assert.assertFalse(delivery.getOrders().contains(order));
+        order.getComplaints().forEach(complaint1 ->
+            Assert.assertFalse(complaint1.getOrders().contains(order)));
+        Assert.assertFalse(deliveryCompany.getDeliveries().contains(delivery));
 
-        //entityManager.remove(complaint); // because of no cascade
-        //entityManager.remove(delivery);
-        //entityManager.remove(order);
+        // maybe synchronize also ProductOrder
 
-        //entityManager.flush();
+        Assert.assertNull(entityManager.find(Order.class, order.getOrderId()));
+        Assert.assertNull(entityManager.find(Complaint.class, complaint.getComplaintId()));
+        Assert.assertNull(entityManager.find(Delivery.class, delivery.getDeliveryId()));
+        Assert.assertNull(entityManager.find(ProductOrder.class, productOrder.getProductOrderId()));
+        Assert.assertNull(entityManager.find(ProductOrder.class, productOrder2.getProductOrderId()));
+    }
+
+    @Test
+    public void given_Complaint_when_remove_then_removed()
+    {
+        // Given
+        Long complaintId = complaint.getComplaintId();
+
+        // When
+        shopDAO.removeComplaint(complaint);
+        entityManager.flush();
+
+        // then
+        complaint.getOrders().forEach(order1 -> Assert.assertFalse(order1.getComplaints().contains(complaint)));
+        Assert.assertNull(entityManager.find(Complaint.class, complaintId));
     }
 }

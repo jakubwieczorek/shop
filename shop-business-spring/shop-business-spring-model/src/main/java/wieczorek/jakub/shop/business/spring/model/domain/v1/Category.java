@@ -27,7 +27,7 @@ public class Category
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Category> subCategories = new LinkedList<>();
 
-    @Column(name= "category_name", unique = true)
+    @Column(name= "category_name")
     @NaturalId
     private String categoryName;
 

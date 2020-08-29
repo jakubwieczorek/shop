@@ -3,12 +3,10 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
-import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
 
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "Customer")
@@ -25,7 +23,7 @@ public class Customer
     private Long customerId;
 
     @NaturalId
-    @Column(name = "email", unique = true)
+    @Column(name = "email")
     private String email;
 
     private String surname;
@@ -59,47 +57,5 @@ public class Customer
     {
         order.setCustomer(null);
         orders.remove(order);
-    }
-
-    public Customer()
-    {
-
-    }
-
-    public CustomerDTO toDTO()
-    {
-        CustomerDTO customerDTO = new CustomerDTO();
-
-        customerDTO.setCity(getCity());
-        customerDTO.setEmail(getEmail());
-        customerDTO.setFirstName(getFirstName());
-        customerDTO.setFlatNumber(getFlatNumber());
-        customerDTO.setHouseNumber(getHouseNumber());
-        customerDTO.setPassword(getPassword());
-        customerDTO.setPostalCode(getPostalCode());
-        customerDTO.setPhoneNumber(getPhoneNumber());
-        customerDTO.setSurname(getSurname());
-        customerDTO.setStreet(getStreet());
-        customerDTO.setCustomerId(getCustomerId());
-
-        customerDTO.setOrders(orders.stream().map(Order::toDTO).collect(Collectors.toList()));
-
-        return customerDTO;
-    }
-
-    public Customer(CustomerDTO customerDTO)
-    {
-        setCity(customerDTO.getCity());
-        setEmail(customerDTO.getEmail());
-        setFirstName(customerDTO.getFirstName());
-        setFlatNumber(customerDTO.getFlatNumber());
-        setHouseNumber(customerDTO.getHouseNumber());
-        setPassword(customerDTO.getPassword());
-        setPostalCode(customerDTO.getPostalCode());
-        setPhoneNumber(customerDTO.getPhoneNumber());
-        setSurname(customerDTO.getSurname());
-        setStreet(customerDTO.getStreet());
-
-        setOrders(customerDTO.getOrders().stream().map(Order::new).collect(Collectors.toList()));
     }
 }

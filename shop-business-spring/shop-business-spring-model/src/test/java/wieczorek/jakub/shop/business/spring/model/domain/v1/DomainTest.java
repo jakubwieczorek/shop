@@ -26,24 +26,37 @@ import java.util.List;
 @ContextConfiguration(classes = {BusinessConfig.class})
 @TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Sql("init.sql")
-@Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@Sql("classpath:init.sql")
+@Sql(scripts = "classpath:clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 @EntityScan(basePackages = "wieczorek.jakub.shop.business.spring.model.domain.v1")
 public class DomainTest
 {
     @Autowired
     private TestEntityManager entityManager;
 
+    private Category category;
+    private Product product1;
+    private Product product2;
+    private DeliveryCompany deliveryCompany;
+    private Customer customer;
+    private Delivery delivery;
+    private Order order;
+    private ProductOrder productOrder;
+    private ProductOrder productOrder2;
+    private Promotion promotion;
+    private Promotion promotion2;
+    private Complaint complaint;
+
     @Before
     public void setUp()
     {
         // new category
-        Category category = new Category();
+        category = new Category();
         category.setCategoryName("category_name");
         entityManager.persist(category);
 
         // new product
-        Product product1 = new Product();
+        product1 = new Product();
         product1.setProductName("product1");
         product1.setProductPrice(BigDecimal.ONE);
         product1.setAmountInStock(2L);
@@ -55,7 +68,7 @@ public class DomainTest
         product1.setSize("Size");
 
         // new product
-        Product product2 = new Product();
+        product2 = new Product();
         product2.setProductName("product2");
         product2.setProductPrice(BigDecimal.ONE);
         product2.setAmountInStock(2L);
@@ -71,12 +84,12 @@ public class DomainTest
         category.addProduct(product2);
 
         // new deliveryCompany
-        DeliveryCompany deliveryCompany = new DeliveryCompany();
+        deliveryCompany = new DeliveryCompany();
         deliveryCompany.setDeliveryCompanyName("aa");
         entityManager.persist(deliveryCompany);
 
         // new customer
-        Customer customer = new Customer();
+        customer = new Customer();
         customer.setCity("CITY");
         customer.setEmail("MAIL");
         customer.setFirstName("FIRSTNAME");
@@ -90,14 +103,14 @@ public class DomainTest
         entityManager.persist(customer);
 
         // new order
-        Order order = new Order();
+        order = new Order();
         order.setCostOfProducts(BigDecimal.valueOf(4));
         order.setCostOfDelivery(BigDecimal.valueOf(3));
         order.setFinalCost(BigDecimal.valueOf(7));
         customer.addOrder(order);
 
         // new delivery
-        Delivery delivery = new Delivery();
+        delivery = new Delivery();
         delivery.setDeliveryTime(new Date());
         delivery.setPrice(BigDecimal.valueOf(5));
         delivery.addOrder(order);
@@ -105,9 +118,9 @@ public class DomainTest
         entityManager.persist(delivery);
 
         // add products to order
-        ProductOrder productOrder = new ProductOrder();
+        productOrder = new ProductOrder();
         productOrder.setAmountOfOrderedProducts(5L);
-        ProductOrder productOrder2 = new ProductOrder();
+        productOrder2 = new ProductOrder();
         productOrder2.setAmountOfOrderedProducts(2L);
         productOrder.addProductOrder(order, product1);
         productOrder2.addProductOrder(order, product2);
@@ -115,13 +128,13 @@ public class DomainTest
         entityManager.persist(productOrder2);
 
         // new promotion
-        Promotion promotion = new Promotion();
+        promotion = new Promotion();
         promotion.setDeadline(new Date());
         promotion.setDescription("description");
         promotion.setPercentage(BigDecimal.valueOf(30));
 
         // new promotion
-        Promotion promotion2 = new Promotion();
+        promotion2 = new Promotion();
         promotion2.setDeadline(new Date());
         promotion2.setDescription("description");
         promotion2.setPercentage(BigDecimal.valueOf(30));
@@ -132,7 +145,7 @@ public class DomainTest
         entityManager.persist(promotion2);
 
         // new complaint
-        Complaint complaint = new Complaint();
+        complaint = new Complaint();
         complaint.setComplaintTime(new Date());
         complaint.setContent("content");
         complaint.addOrder(order);
@@ -140,7 +153,6 @@ public class DomainTest
 
         entityManager.flush();
         // 2 updates added because of promotion and complaint
-
 
         // remove order references
         //delivery.removeOrder(order);

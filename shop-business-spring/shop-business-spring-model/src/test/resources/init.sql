@@ -18,6 +18,19 @@ CREATE SEQUENCE delivery_company_id_sequence START WITH 1 INCREMENT BY 1 CACHE 1
 CREATE SEQUENCE customer_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
 CREATE SEQUENCE picture_id_sequence START WITH 1 INCREMENT BY 1 CACHE 100 ORDER;
 
+delete COMPLAINT;
+delete COMPLAINTS_FOR_ORDERS;
+delete CUSTOMER;
+delete DELIVERY;
+delete DELIVERY_COMPANY;
+delete ORDERS;
+delete PICTURE;
+delete PRODUCT;
+delete PRODUCT_ORDER;
+delete CATEGORY;
+delete PROMOTION;
+
+
 -- insert into category (category_id, category_name) values (CATEGORY_ID_SEQUENCE.nextval, 'Electronics');
 -- insert into category (category_id, category_name, parent_category_id) values (CATEGORY_ID_SEQUENCE.nextval, 'Smartphones', 1);
 --

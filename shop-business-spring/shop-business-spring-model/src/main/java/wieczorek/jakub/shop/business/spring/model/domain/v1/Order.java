@@ -2,7 +2,6 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
-import wieczorek.jakub.shop.business.spring.client.dto.OrderDTO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -46,33 +45,9 @@ public class Order
     )
     private Set<Complaint> complaints = new HashSet<>();
 
-    public void removeOrder()
+    public void removeComplaint(Complaint complaint)
     {
-        productOrders.forEach(productOrder -> productOrder.setOrder(null));
-    }
-
-    public OrderDTO toDTO()
-    {
-        OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setOrderId(orderId);
-        orderDTO.setCostOfDelivery(costOfDelivery);
-        orderDTO.setCostOfProducts(costOfProducts);
-        orderDTO.setFinalCost(finalCost);
-        // set
-        return orderDTO;
-    }
-
-    public Order()
-    {
-
-    }
-
-    public Order(OrderDTO orderDTO)
-    {
-        setCostOfDelivery(orderDTO.getCostOfDelivery());
-        setCostOfProducts(orderDTO.getCostOfProducts());
-        setFinalCost(orderDTO.getFinalCost());
-
-        // set
+        complaints.remove(complaint);
+        complaint.getOrders().remove(this);
     }
 }

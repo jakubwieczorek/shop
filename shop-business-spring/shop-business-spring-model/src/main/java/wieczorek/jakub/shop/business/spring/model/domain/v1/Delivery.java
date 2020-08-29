@@ -2,14 +2,12 @@ package wieczorek.jakub.shop.business.spring.model.domain.v1;
 
 import lombok.Getter;
 import lombok.Setter;
-import wieczorek.jakub.shop.business.spring.client.dto.DeliveryDTO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "Delivery")
@@ -49,28 +47,5 @@ public class Delivery
     {
         orders.remove(order);
         order.setDelivery(null);
-    }
-
-    public Delivery()
-    {
-
-    }
-
-    public Delivery(DeliveryDTO deliveryDTO)
-    {
-        setDeliveryTime(deliveryDTO.getDeliveryTime());
-        setPrice(deliveryDTO.getPrice());
-        setOrders(deliveryDTO.getOrders().stream().map(Order::new).collect(Collectors.toList()));
-    }
-
-    public DeliveryDTO toDTO()
-    {
-        DeliveryDTO deliveryDTO = new DeliveryDTO();
-
-        deliveryDTO.setDeliveryTime(getDeliveryTime());
-        deliveryDTO.setPrice(getPrice());
-        deliveryDTO.setOrders(orders.stream().map(Order::toDTO).collect(Collectors.toList()));
-
-        return deliveryDTO;
     }
 }

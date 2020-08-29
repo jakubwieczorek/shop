@@ -27,8 +27,8 @@ import java.util.Date;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ContextConfiguration(classes = {BusinessConfig.class})
 @RunWith(SpringRunner.class)
-@Sql("init.sql")
-@Sql(scripts = "clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+@Sql("classpath:init.sql")
+@Sql(scripts = "classpath:clean.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 @EntityScan(basePackages = {"wieczorek.jakub.shop.business.spring.model.domain.v2"})
 @Ignore
 public class DeliveryTest

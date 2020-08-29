@@ -20,7 +20,7 @@ public class DeliveryCompany {
     @GeneratedValue(generator = "delivery_company_id_sequence", strategy = GenerationType.SEQUENCE)
     private Long deliveryCompanyId;
 
-    @Column(unique = true)
+    @Column
     @NaturalId
     private String deliveryCompanyName;
 
