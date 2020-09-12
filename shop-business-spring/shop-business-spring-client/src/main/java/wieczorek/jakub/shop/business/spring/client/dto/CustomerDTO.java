@@ -1,8 +1,10 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Setter
@@ -31,5 +33,18 @@ public class CustomerDTO
 
     private String password;
 
-    private List<OrderDTO> orders;
+    @JsonManagedReference
+    private List<OrderDTO> orders = new LinkedList<>();
+
+    public void addOrder(OrderDTO order)
+    {
+        orders.add(order);
+        order.setCustomer(this);
+    }
+
+    public void removeOrder(OrderDTO order)
+    {
+        order.setCustomer(null);
+        orders.remove(order);
+    }
 }

@@ -1,5 +1,7 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,11 +21,15 @@ public class OrderDTO
 
     private BigDecimal finalCost;
 
+    @JsonBackReference
     private DeliveryDTO delivery;
 
+    @JsonBackReference
     private CustomerDTO customer;
 
+    @JsonManagedReference
     private Set<ProductOrderDTO> productOrders = new HashSet<>();
 
+    @JsonManagedReference
     private Set<ComplaintDTO> complaints = new HashSet<>();
 }

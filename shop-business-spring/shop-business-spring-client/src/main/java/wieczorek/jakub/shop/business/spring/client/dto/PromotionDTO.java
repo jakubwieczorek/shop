@@ -1,5 +1,6 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,13 @@ public class PromotionDTO
 
     private Date deadline;
 
+    @JsonManagedReference
     private List<ProductDTO> products = new LinkedList<>();
 
+    @JsonManagedReference
     private List<DeliveryDTO> deliveries = new LinkedList<>();
 
+    @JsonManagedReference
     private List<CategoryDTO>categories = new LinkedList<>();
 
     public void addCategory(CategoryDTO category)

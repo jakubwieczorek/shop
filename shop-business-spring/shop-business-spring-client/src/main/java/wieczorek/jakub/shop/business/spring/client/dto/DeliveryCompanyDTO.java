@@ -1,8 +1,10 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Getter
@@ -14,7 +16,8 @@ public class DeliveryCompanyDTO
 
     private String deliveryCompanyName;
 
-    private List<DeliveryDTO> deliveries;
+    @JsonManagedReference
+    private List<DeliveryDTO> deliveries = new LinkedList<>();
 
     public void addDelivery(DeliveryDTO delivery)
     {

@@ -1,5 +1,7 @@
 package wieczorek.jakub.shop.business.spring.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,10 +20,13 @@ public class DeliveryDTO
 
     public Date deliveryTime;
 
+    @JsonManagedReference
     public List<OrderDTO>orders = new LinkedList<>();
 
+    @JsonBackReference
     private DeliveryCompanyDTO deliveryCompany;
 
+    @JsonBackReference
     private PromotionDTO promotion;
 
     public void addOrder(OrderDTO order)
