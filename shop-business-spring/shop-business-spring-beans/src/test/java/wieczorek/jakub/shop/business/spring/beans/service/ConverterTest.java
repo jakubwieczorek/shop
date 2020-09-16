@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.modelmapper.ModelMapper;
-import wieczorek.jakub.shop.business.spring.client.dto.*;
+import wieczorek.jakub.shop.business.spring.client.v1.dto.*;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.*;
 
 import java.math.BigDecimal;

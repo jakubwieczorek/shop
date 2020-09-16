@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wieczorek.jakub.shop.business.spring.beans.ds.CustomerRepository;
 import wieczorek.jakub.shop.business.spring.beans.service.Converter;
-import wieczorek.jakub.shop.business.spring.client.boundry.TestBean;
-import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
+import wieczorek.jakub.shop.business.spring.client.v1.boundry.TestBean;
+import wieczorek.jakub.shop.business.spring.client.v1.dto.CustomerDTO;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.Customer;
 
 import java.util.ArrayList;

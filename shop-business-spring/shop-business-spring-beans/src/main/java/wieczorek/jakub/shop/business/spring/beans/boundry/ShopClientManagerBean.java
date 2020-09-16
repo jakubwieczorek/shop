@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import wieczorek.jakub.shop.business.spring.beans.ds.CustomerRepository;
 import wieczorek.jakub.shop.business.spring.beans.ds.ShopDAO;
 import wieczorek.jakub.shop.business.spring.beans.service.Converter;
-import wieczorek.jakub.shop.business.spring.client.boundry.ShopClientManager;
-import wieczorek.jakub.shop.business.spring.client.dto.*;
+import wieczorek.jakub.shop.business.spring.client.v1.boundry.ShopClientManager;
+import wieczorek.jakub.shop.business.spring.client.v1.dto.*;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.*;
 
 import java.util.ArrayList;

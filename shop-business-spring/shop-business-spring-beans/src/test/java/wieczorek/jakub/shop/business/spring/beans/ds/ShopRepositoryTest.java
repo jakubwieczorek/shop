@@ -167,7 +167,7 @@ public class ShopRepositoryTest
             Assert.assertFalse(complaint1.getOrders().contains(order)));
         Assert.assertFalse(deliveryCompany.getDeliveries().contains(delivery));
 
-        // maybe synchronize also ProductOrder
+        // maybe synchronize also ProductOrderU
 
         Assert.assertNull(entityManager.find(Order.class, order.getOrderId()));
         Assert.assertNull(entityManager.find(Complaint.class, complaint.getComplaintId()));

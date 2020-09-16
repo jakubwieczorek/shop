@@ -1,0 +1,11 @@
+delete COMPLAINT;
+delete COMPLAINTS_FOR_ORDERS;
+delete CUSTOMER;
+delete DELIVERY;
+delete DELIVERY_COMPANY;
+delete ORDERS;
+delete PICTURE;
+delete PRODUCT;
+delete PRODUCT_ORDER;
+delete CATEGORY;
+delete PROMOTION;

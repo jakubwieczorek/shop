@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import wieczorek.jakub.shop.business.spring.client.boundry.TestBean;
-import wieczorek.jakub.shop.business.spring.client.dto.CustomerDTO;
+import wieczorek.jakub.shop.business.spring.client.v1.boundry.TestBean;
+import wieczorek.jakub.shop.business.spring.client.v1.dto.CustomerDTO;
 import wieczorek.jakub.shop.dto.Article;
 import wieczorek.jakub.shop.services.ArticleDAO;
 

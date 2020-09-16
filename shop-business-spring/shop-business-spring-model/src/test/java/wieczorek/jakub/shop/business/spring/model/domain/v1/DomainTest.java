@@ -184,13 +184,13 @@ public class DomainTest
 //    public void given_order_in_customer_when_delete_then_Customer_and_Orders_deleted()
 //    {
 //        // given
-//        Customer customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
+//        CustomerU customer = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(CustomerU.class).load("MAIL");
 //
 //        Long orderId = customer.getOrders().get(0).getOrderId();
 //
-//        Order order = customer.getOrders().get(0);
-//        Delivery delivery = order.getDelivery();
-//        Set<ProductOrder> productOrders = order.getProductOrders();
+//        OrderU order = customer.getOrders().get(0);
+//        DeliveryU delivery = order.getDelivery();
+//        Set<ProductOrderU> productOrders = order.getProductOrders();
 ////        productOrders.
 //
 //
@@ -214,8 +214,8 @@ public class DomainTest
 ////        entityManager.flush();
 ////
 ////        // then
-////        Customer customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(Customer.class).load("MAIL");
-////        Order order2 = entityManager.find(Order.class, orderId);
+////        CustomerU customer2 = entityManager.getEntityManager().unwrap(Session.class).bySimpleNaturalId(CustomerU.class).load("MAIL");
+////        OrderU order2 = entityManager.find(OrderU.class, orderId);
 ////        Assert.assertNull(customer2);
 ////        // Assert.assertNull(order2);
 //    }

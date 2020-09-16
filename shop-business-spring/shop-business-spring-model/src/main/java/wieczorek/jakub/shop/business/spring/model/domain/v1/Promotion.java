@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "Promotion")
+@Table(name = "promotion")
 @Setter
 @Getter
 public class Promotion

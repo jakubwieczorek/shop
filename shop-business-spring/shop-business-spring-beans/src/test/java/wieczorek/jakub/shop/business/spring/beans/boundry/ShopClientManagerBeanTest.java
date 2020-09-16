@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import wieczorek.jakub.shop.business.spring.beans.ds.CustomerRepository;
 import wieczorek.jakub.shop.business.spring.beans.ds.ShopDAO;
 import wieczorek.jakub.shop.business.spring.client.BusinessConfig;
-import wieczorek.jakub.shop.business.spring.client.boundry.ShopClientManager;
-import wieczorek.jakub.shop.business.spring.client.dto.*;
+import wieczorek.jakub.shop.business.spring.client.v1.boundry.ShopClientManager;
+import wieczorek.jakub.shop.business.spring.client.v1.dto.*;
 import wieczorek.jakub.shop.business.spring.model.domain.v1.Customer;
 
 import java.math.BigDecimal;
@@ -138,7 +138,7 @@ public class ShopClientManagerBeanTest
         DeliveryCompanyDTO deliveryCompanyDTO = new DeliveryCompanyDTO();
         deliveryCompanyDTO.setDeliveryCompanyName("aa");
 
-        // new Customer
+        // new CustomerU
         CustomerDTO customerDTO = new CustomerDTO();
         customerDTO.setCity("CITY");
         customerDTO.setEmail("MAIL");

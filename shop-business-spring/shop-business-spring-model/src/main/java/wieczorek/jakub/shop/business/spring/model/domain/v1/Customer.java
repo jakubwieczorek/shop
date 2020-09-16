@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "customer")
 @Getter
 @Setter
 public class Customer
