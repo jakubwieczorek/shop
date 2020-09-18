@@ -17,6 +17,7 @@ public class Converter
 
     public <S, D> D convert(S baseObject, Class<D> destClazz)
     {
+        // TODO handle null as an Optional
         return modelMapper.map(baseObject, destClazz);
     }
 }

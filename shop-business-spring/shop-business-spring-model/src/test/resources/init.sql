@@ -76,13 +76,13 @@ delete PROMOTION;
 --      w każdych warunkach.', 17, 0.55, 'HP', 2020, '159.41 mm/244.48 mm/5.4 mm', 3);
 --
 -- insert into Delivery_Company values (DELIVERY_COMPANY_ID_SEQUENCE.nextval, 'Poczta Polska');
--- insert into CustomerU values (CUSTOMER_ID_SEQUENCE.nextval, 'malgorzata1234@op.pl', 'Kowalska', 'Małgorzata', 'Dobra', '72-003', 5, '512675777', 'Miła', null, null);
+-- insert into Customer values (CUSTOMER_ID_SEQUENCE.nextval, 'malgorzata1234@op.pl', 'Kowalska', 'Małgorzata', 'Dobra', '72-003', 5, '512675777', 'Miła', null, null);
 --
--- insert into DeliveryU (DELIVERY_ID, PRICE, DELIVERY_TIME, DELIVERY_COMPANY_ID) values (DELIVERY_ID_SEQUENCE.nextval, 88.99, TO_DATE('25/06/2020', 'DD/MM/YYYY'), 1);
+-- insert into Delivery (DELIVERY_ID, PRICE, DELIVERY_TIME, DELIVERY_COMPANY_ID) values (DELIVERY_ID_SEQUENCE.nextval, 88.99, TO_DATE('25/06/2020', 'DD/MM/YYYY'), 1);
 -- insert into Orders values (ORDER_ID_SEQUENCE.nextval, 1, 1, 10, 15, 25);
 --
 -- insert into Product_Order (amount_of_ordered_products, product_id, order_id) values (2, 1, 1);
 -- insert into Product_Order (amount_of_ordered_products, product_id, order_id) values (1, 3, 1);
 
--- insert into PromotionU values (PROMOTION_ID_SEQUENCE.nextval, null, 3, 30, '30% for all tablets!',
+-- insert into Promotion values (PROMOTION_ID_SEQUENCE.nextval, null, 3, 30, '30% for all tablets!',
 --     TO_DATE('30/06/2020', 'DD/MM/YYYY'), null);

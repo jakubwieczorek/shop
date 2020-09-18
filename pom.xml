@@ -14,9 +14,9 @@
 	<description>shop application spring boot</description>
 
 	<modules>
-		<module>shop-war</module>
+		<!--<module>shop-war</module>-->
 		<module>shop-war-v2</module>
-		<module>shop-business-spring</module>
+		<!--<module>shop-business-spring</module>-->
 		<module>shop-business-spring-v2</module>
 	</modules>
 

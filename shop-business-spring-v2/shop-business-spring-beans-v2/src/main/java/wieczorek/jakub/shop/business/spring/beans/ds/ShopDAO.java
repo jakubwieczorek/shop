@@ -4,10 +4,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import wieczorek.jakub.shop.business.spring.model.domain.v2.CategoryU;
-import wieczorek.jakub.shop.business.spring.model.domain.v2.CustomerU;
-import wieczorek.jakub.shop.business.spring.model.domain.v2.OrderU;
-import wieczorek.jakub.shop.business.spring.model.domain.v2.ProductU;
+import wieczorek.jakub.shop.business.spring.model.domain.v2.*;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -53,5 +50,27 @@ public class ShopDAO
     {
         return entityManager.createQuery("select p from ProductU p where p.category.categoryId = :categoryId", ProductU.class).
                 setParameter("categoryId", categoryId).getResultList();
+    }
+
+    @Transactional
+    public ProductOrderU fetchProductOrder()
+    {
+        ProductOrderIdU productOrderIdU = new ProductOrderIdU();
+        productOrderIdU.setOrderId(1L);
+        productOrderIdU.setProductId(1L);
+
+        return entityManager.find(ProductOrderU.class, productOrderIdU);
+    }
+
+    @Transactional
+    public void persistProductOrder(ProductOrderU productOrderU)
+    {
+        productOrderU.getProduct().setCategory(entityManager.merge(productOrderU.getProduct().getCategory()));
+        productOrderU.setProduct(entityManager.merge(productOrderU.getProduct()));
+        productOrderU.getOrder().setCustomer(entityManager.merge(productOrderU.getOrder().getCustomer()));
+        productOrderU.getOrder().getDelivery().setDeliveryCompany(entityManager.merge(productOrderU.getOrder().getDelivery().getDeliveryCompany()));
+        entityManager.persist(productOrderU.getOrder().getDelivery());
+        entityManager.persist(productOrderU.getOrder());
+        entityManager.persist(productOrderU);
     }
 }

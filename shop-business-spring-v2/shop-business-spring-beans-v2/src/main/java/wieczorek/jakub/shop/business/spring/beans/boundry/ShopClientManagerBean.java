@@ -8,9 +8,11 @@ import wieczorek.jakub.shop.business.spring.beans.service.Converter;
 import wieczorek.jakub.shop.business.spring.client.v2.boundry.ShopClientManager;
 import wieczorek.jakub.shop.business.spring.client.v2.dto.CategoryUDTO;
 import wieczorek.jakub.shop.business.spring.client.v2.dto.CustomerUDTO;
+import wieczorek.jakub.shop.business.spring.client.v2.dto.ProductOrderUDTO;
 import wieczorek.jakub.shop.business.spring.client.v2.dto.ProductUDTO;
 import wieczorek.jakub.shop.business.spring.model.domain.v2.CategoryU;
 import wieczorek.jakub.shop.business.spring.model.domain.v2.CustomerU;
+import wieczorek.jakub.shop.business.spring.model.domain.v2.ProductOrderU;
 import wieczorek.jakub.shop.business.spring.model.domain.v2.ProductU;
 
 import java.util.ArrayList;
@@ -41,6 +43,18 @@ public class ShopClientManagerBean implements ShopClientManager
         List<ProductUDTO> productUDTOS = new ArrayList<>();
         products.forEach(productU -> productUDTOS.add(converter.convert(productU, ProductUDTO.class)));
         return productUDTOS;
+    }
+
+    @Override
+    public ProductOrderUDTO fetchProductOrder() {
+        ProductOrderU productOrderU = shopDAO.fetchProductOrder();
+        return converter.convert(productOrderU, ProductOrderUDTO.class);
+    }
+
+    @Override
+    public void createProductOrder(ProductOrderUDTO productOrderUDTOS) {
+        ProductOrderU productOrderU = converter.convert(productOrderUDTOS, ProductOrderU.class);
+        shopDAO.persistProductOrder(productOrderU);
     }
 
     @Autowired

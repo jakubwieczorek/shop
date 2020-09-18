@@ -15,7 +15,6 @@
         <dependency>
             <groupId>wieczorek.jakub</groupId>
             <artifactId>shop-business-spring-client-v2</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
