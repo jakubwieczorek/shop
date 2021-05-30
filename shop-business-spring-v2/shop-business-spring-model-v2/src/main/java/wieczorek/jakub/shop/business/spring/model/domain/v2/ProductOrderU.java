@@ -17,12 +17,12 @@ public class ProductOrderU
 
     private Long amountOfOrderedProducts;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @MapsId("productId")
     @JoinColumn(name = "product_id", nullable = false)
     private ProductU product;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @MapsId("orderId")
     @JoinColumn(name = "order_id", nullable = false)
     private OrderU order;

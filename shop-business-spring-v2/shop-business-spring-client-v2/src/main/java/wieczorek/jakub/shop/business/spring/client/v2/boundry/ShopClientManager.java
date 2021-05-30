@@ -15,4 +15,8 @@ public interface ShopClientManager {
     ProductOrderUDTO fetchProductOrder();
 
     void createProductOrder(ProductOrderUDTO productOrderUDTOS);
+
+    void createProductOrders(List<ProductOrderUDTO> productOrders);
+
+    List<ProductOrderUDTO> fetchProductOrders(Long customerId);
 }

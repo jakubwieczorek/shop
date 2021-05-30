@@ -4,6 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class Converter
 {
@@ -17,7 +19,6 @@ public class Converter
 
     public <S, D> D convert(S baseObject, Class<D> destClazz)
     {
-        // TODO handle null as an Optional
-        return modelMapper.map(baseObject, destClazz);
+        return Optional.ofNullable(baseObject).map(object -> modelMapper.map(object, destClazz)).orElse(null);
     }
 }

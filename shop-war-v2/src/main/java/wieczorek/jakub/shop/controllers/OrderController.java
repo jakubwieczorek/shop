@@ -3,12 +3,15 @@ package wieczorek.jakub.shop.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wieczorek.jakub.shop.business.spring.client.v2.boundry.ShopClientManager;
 import wieczorek.jakub.shop.business.spring.client.v2.dto.ProductOrderUDTO;
+import wieczorek.jakub.shop.business.spring.model.domain.v2.ProductOrderU;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @RestController
 public class OrderController
@@ -21,10 +24,10 @@ public class OrderController
         this.shopClientManager = shopClientManager;
     }
 
-    @PostMapping(path = "/order")
-    public ResponseEntity<Void> addOrder(@RequestBody ProductOrderUDTO productOrderUDTOS)
+    @PostMapping(path = "/orders")
+    public ResponseEntity<Void> addOrder(@RequestBody Map<String, List<ProductOrderUDTO>> productOrderUDTOSMap)
     {
-        shopClientManager.createProductOrder(productOrderUDTOS);
+        shopClientManager.createProductOrders(productOrderUDTOSMap.get("productOrders"));
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -32,6 +35,14 @@ public class OrderController
     @GetMapping(path = "/order")
     public ResponseEntity<ProductOrderUDTO> fetchOrder()
     {
-        return new ResponseEntity<ProductOrderUDTO>(shopClientManager.fetchProductOrder(), HttpStatus.OK);
+        return new ResponseEntity<>(shopClientManager.fetchProductOrder(), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/orders")
+    public ResponseEntity<Map<String, List<ProductOrderUDTO>>> fetchOrders(@RequestParam Long customerId)
+    {
+        Map<String, List<ProductOrderUDTO>> returnMap = new HashMap<>();
+        returnMap.put("productOrders", shopClientManager.fetchProductOrders(customerId));
+        return new ResponseEntity<>(returnMap, HttpStatus.OK);
     }
 }
